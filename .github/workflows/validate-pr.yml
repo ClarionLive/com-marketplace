@@ -1,0 +1,162 @@
+name: Validate Control Submission
+
+on:
+  pull_request:
+    paths:
+      - 'controls/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: |
+          npm install -g ajv-cli js-yaml
+
+      - name: Get changed controls
+        id: changed-files
+        uses: tj-actions/changed-files@v44
+        with:
+          files: controls/**
+
+      - name: Validate manifests
+        if: steps.changed-files.outputs.any_changed == 'true'
+        run: |
+          set -e
+
+          echo "Validating changed control manifests..."
+
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            if [[ "$file" == */manifest.yaml ]]; then
+              control_dir=$(dirname "$file")
+              control_name=$(basename "$control_dir")
+
+              echo "Validating $control_name..."
+
+              # Convert YAML to JSON for validation
+              node -e "
+                const yaml = require('js-yaml');
+                const fs = require('fs');
+                const manifest = yaml.load(fs.readFileSync('$file', 'utf8'));
+                console.log(JSON.stringify(manifest, null, 2));
+              " > /tmp/manifest.json
+
+              # Validate against schema
+              ajv validate -s schemas/manifest.schema.json -d /tmp/manifest.json
+
+              if [ $? -eq 0 ]; then
+                echo "$control_name manifest is valid"
+              else
+                echo "$control_name manifest validation failed"
+                exit 1
+              fi
+
+              # Check if api-docs.json exists
+              if [ -f "$control_dir/api-docs.json" ]; then
+                echo "$control_name has api-docs.json"
+
+                # Validate JSON syntax
+                node -e "JSON.parse(require('fs').readFileSync('$control_dir/api-docs.json'))"
+                if [ $? -eq 0 ]; then
+                  echo "$control_name api-docs.json is valid JSON"
+                else
+                  echo "$control_name api-docs.json is invalid JSON"
+                  exit 1
+                fi
+              else
+                echo "$control_name is missing api-docs.json"
+                exit 1
+              fi
+
+              # Check repository URL is accessible
+              repo_url=$(node -e "
+                const yaml = require('js-yaml');
+                const fs = require('fs');
+                const manifest = yaml.load(fs.readFileSync('$file', 'utf8'));
+                console.log(manifest.repository.url);
+              ")
+
+              echo "Checking repository: $repo_url"
+              http_code=$(curl -s -o /dev/null -w "%{http_code}" "$repo_url")
+
+              if [ "$http_code" == "200" ]; then
+                echo "Repository is accessible"
+              else
+                echo "Repository returned HTTP $http_code (may be private)"
+              fi
+            fi
+          done
+
+          echo "All validations passed!"
+
+      - name: Check for duplicate ProgID
+        if: steps.changed-files.outputs.any_changed == 'true'
+        run: |
+          set -e
+
+          echo "Checking for duplicate ProgIDs..."
+
+          # Collect all ProgIDs
+          prog_ids=()
+          for manifest in controls/*/manifest.yaml; do
+            if [ -f "$manifest" ]; then
+              prog_id=$(node -e "
+                const yaml = require('js-yaml');
+                const fs = require('fs');
+                const manifest = yaml.load(fs.readFileSync('$manifest', 'utf8'));
+                console.log(manifest.prog_id);
+              ")
+              prog_ids+=("$prog_id")
+            fi
+          done
+
+          # Check for duplicates
+          sorted_ids=$(printf '%s\n' "${prog_ids[@]}" | sort)
+          unique_ids=$(printf '%s\n' "${prog_ids[@]}" | sort | uniq)
+
+          if [ "$sorted_ids" != "$unique_ids" ]; then
+            echo "Duplicate ProgID detected!"
+            printf '%s\n' "${prog_ids[@]}" | sort | uniq -d
+            exit 1
+          fi
+
+          echo "No duplicate ProgIDs found"
+
+      - name: Post validation summary
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const pr_number = context.payload.pull_request.number;
+
+            const status = '${{ job.status }}';
+            const emoji = status === 'success' ? 'PASS' : 'FAIL';
+
+            const body = `## ${emoji} Control Validation ${status === 'success' ? 'Passed' : 'Failed'}
+
+            ${status === 'success'
+              ? 'All validation checks passed. This PR is ready for review.'
+              : 'Some validation checks failed. Please review the workflow logs for details.'}
+
+            ### Checks Performed
+            - manifest.yaml schema validation
+            - api-docs.json format validation
+            - Repository URL accessibility
+            - ProgID uniqueness check
+            `;
+
+            await github.rest.issues.createComment({
+              owner,
+              repo,
+              issue_number: pr_number,
+              body
+            });

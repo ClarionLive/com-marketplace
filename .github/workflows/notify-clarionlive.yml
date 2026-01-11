@@ -1,0 +1,70 @@
+name: Notify ClarionLive
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'controls/**'
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Get changed controls
+        id: changed
+        run: |
+          changed_controls=$(git diff --name-only HEAD~1 HEAD -- 'controls/*/manifest.yaml' | xargs -I {} dirname {} | xargs -I {} basename {} | sort | uniq | tr '\n' ',' | sed 's/,$//')
+          echo "controls=$changed_controls" >> $GITHUB_OUTPUT
+          echo "Changed controls: $changed_controls"
+
+      - name: Trigger ClarionLive sync
+        if: steps.changed.outputs.controls != ''
+        run: |
+          echo "Notifying ClarionLive of registry update..."
+
+          response=$(curl -s -w "\n%{http_code}" -X POST \
+            "${{ secrets.CLARIONLIVE_WEBHOOK_URL }}" \
+            -H "Content-Type: application/json" \
+            -H "X-Webhook-Secret: ${{ secrets.CLARIONLIVE_WEBHOOK_SECRET }}" \
+            -d '{
+              "event": "registry_updated",
+              "controls": "${{ steps.changed.outputs.controls }}",
+              "commit": "${{ github.sha }}",
+              "timestamp": "'$(date -u +%Y-%m-%dT%H:%M:%SZ)'"
+            }')
+
+          http_code=$(echo "$response" | tail -n1)
+          body=$(echo "$response" | head -n -1)
+
+          if [ "$http_code" == "200" ]; then
+            echo "ClarionLive notified successfully"
+            echo "$body"
+          else
+            echo "ClarionLive webhook returned HTTP $http_code"
+            echo "$body"
+            # Don't fail the workflow - ClarionLive will sync on next cron
+          fi
+
+      - name: Create sync summary
+        if: steps.changed.outputs.controls != ''
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const controls = '${{ steps.changed.outputs.controls }}'.split(',').filter(c => c);
+
+            const summary = `## Registry Updated
+
+            The following controls were updated and ClarionLive has been notified:
+
+            ${controls.map(c => `- **${c}**`).join('\n')}
+
+            Changes will appear on [clarionlive.com/com-marketplace](https://clarionlive.com/com-marketplace) shortly.
+            `;
+
+            console.log(summary);

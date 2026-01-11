@@ -1,0 +1,209 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://clarionlive.com/schemas/com-marketplace-manifest.json",
+  "title": "ClarionCOM Marketplace Manifest",
+  "description": "Schema for ClarionCOM control manifest files",
+  "type": "object",
+  "required": [
+    "name",
+    "version",
+    "description",
+    "short_description",
+    "prog_id",
+    "assembly_name",
+    "control_type",
+    "repository",
+    "author",
+    "compatibility",
+    "category"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Display name of the control",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "version": {
+      "type": "string",
+      "description": "Semantic version of the control",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(-[a-zA-Z0-9.]+)?$"
+    },
+    "description": {
+      "type": "string",
+      "description": "Full description of the control",
+      "minLength": 10,
+      "maxLength": 2000
+    },
+    "short_description": {
+      "type": "string",
+      "description": "One-line description for listings",
+      "minLength": 10,
+      "maxLength": 200
+    },
+    "prog_id": {
+      "type": "string",
+      "description": "COM ProgID in Namespace.ClassName format",
+      "pattern": "^[A-Za-z][A-Za-z0-9]*\\.[A-Za-z][A-Za-z0-9]*$"
+    },
+    "assembly_name": {
+      "type": "string",
+      "description": "Name of the compiled assembly (without .dll)",
+      "pattern": "^[A-Za-z][A-Za-z0-9]*$"
+    },
+    "control_type": {
+      "type": "string",
+      "description": "Type of COM control",
+      "enum": ["standard", "webview2"]
+    },
+    "ui_library": {
+      "type": "string",
+      "description": "UI library used",
+      "enum": ["WinForms", "WPF", "WebView2", "DevExpress", "Telerik", "Infragistics", "Custom"],
+      "default": "WinForms"
+    },
+    "repository": {
+      "type": "object",
+      "description": "Source repository information",
+      "required": ["url"],
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "GitHub repository URL",
+          "format": "uri",
+          "pattern": "^https://github\\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$"
+        },
+        "branch": {
+          "type": "string",
+          "description": "Default branch name",
+          "default": "main"
+        }
+      }
+    },
+    "author": {
+      "type": "object",
+      "description": "Control author information",
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Author display name",
+          "minLength": 1
+        },
+        "github": {
+          "type": "string",
+          "description": "GitHub username",
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "email": {
+          "type": "string",
+          "description": "Contact email",
+          "format": "email"
+        }
+      }
+    },
+    "compatibility": {
+      "type": "object",
+      "description": "Compatibility requirements",
+      "required": ["dotnet", "clarion"],
+      "properties": {
+        "dotnet": {
+          "type": "string",
+          "description": ".NET framework version",
+          "enum": ["net472", "net48", "net6.0-windows", "net7.0-windows", "net8.0-windows"]
+        },
+        "clarion": {
+          "type": "object",
+          "required": ["min_version"],
+          "properties": {
+            "min_version": {
+              "type": "string",
+              "description": "Minimum Clarion version",
+              "pattern": "^\\d+\\.\\d+$"
+            },
+            "tested_versions": {
+              "type": "array",
+              "description": "Clarion versions tested with",
+              "items": {
+                "type": "string",
+                "pattern": "^\\d+\\.\\d+$"
+              }
+            }
+          }
+        }
+      }
+    },
+    "category": {
+      "type": "string",
+      "description": "Control category",
+      "enum": ["UI Controls", "Data", "Utility", "Integration", "WebView2"]
+    },
+    "tags": {
+      "type": "array",
+      "description": "Searchable tags",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 30,
+        "pattern": "^[a-z0-9-]+$"
+      },
+      "maxItems": 10
+    },
+    "dependencies": {
+      "type": "array",
+      "description": "NuGet or other dependencies",
+      "items": {
+        "type": "object",
+        "required": ["name", "version"],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["nuget", "runtime", "other"],
+            "default": "nuget"
+          }
+        }
+      }
+    },
+    "changelog": {
+      "type": "array",
+      "description": "Version history",
+      "items": {
+        "type": "object",
+        "required": ["version", "date", "changes"],
+        "properties": {
+          "version": {
+            "type": "string",
+            "pattern": "^\\d+\\.\\d+\\.\\d+(-[a-zA-Z0-9.]+)?$"
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "changes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "screenshots": {
+      "type": "array",
+      "description": "Screenshot URLs",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "maxItems": 5
+    },
+    "documentation_url": {
+      "type": "string",
+      "description": "External documentation URL",
+      "format": "uri"
+    }
+  }
+}
