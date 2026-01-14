@@ -1,0 +1,30 @@
+name: "TextEditorCOMControl"
+version: "1.0.0"
+description: "Rich Text Editor COM Control for Clarion."
+short_description: "Rich Text Editor COM Control for Clarion"
+prog_id: "TextEditorCOM.TextEditorCOMControl"
+assembly_name: "TextEditorCOM"
+control_type: "standard"
+ui_library: "WinForms"
+
+repository:
+  url: "https://github.com/peterparker57/TextEditorCOM"
+  branch: "master"
+
+author:
+  name: "John Hickey"
+  github: "peterparker57"
+
+compatibility:
+  dotnet: "net472"
+  clarion:
+    min_version: "11.0"
+    tested_versions: ["11.0", "12.0"]
+
+category: "UI Controls"
+tags: ["text-editor", "rtf", "rich-text", "winforms", "ui", "control"]
+
+changelog:
+  - version: "1.0.0"
+    date: "2026-01-13"
+    changes: "Initial marketplace submission"
