@@ -1,0 +1,398 @@
+{
+  "properties": [
+    {
+      "name": "PlainText",
+      "type": "STRING",
+      "description": "Gets or sets the plain text content of the editor.",
+      "readonly": false
+    },
+    {
+      "name": "RtfContent",
+      "type": "STRING",
+      "description": "Gets or sets the Rich Text Format (RTF) content.",
+      "readonly": false
+    },
+    {
+      "name": "IsModified",
+      "type": "BYTE",
+      "description": "Gets or sets whether the content has been modified.",
+      "readonly": false
+    },
+    {
+      "name": "FontName",
+      "type": "STRING",
+      "description": "Gets or sets the current font name.",
+      "readonly": false
+    },
+    {
+      "name": "FontSize",
+      "type": "REAL",
+      "description": "Gets or sets the current font size in points.",
+      "readonly": false
+    },
+    {
+      "name": "CanUndo",
+      "type": "BYTE",
+      "description": "Gets whether undo is available.",
+      "readonly": true
+    },
+    {
+      "name": "CanRedo",
+      "type": "BYTE",
+      "description": "Gets whether redo is available.",
+      "readonly": true
+    },
+    {
+      "name": "SelectedText",
+      "type": "STRING",
+      "description": "Gets the currently selected text.",
+      "readonly": true
+    },
+    {
+      "name": "SelectionStart",
+      "type": "LONG",
+      "description": "Gets or sets the selection start position.",
+      "readonly": false
+    },
+    {
+      "name": "SelectionLength",
+      "type": "LONG",
+      "description": "Gets or sets the selection length.",
+      "readonly": false
+    },
+    {
+      "name": "TextLength",
+      "type": "LONG",
+      "description": "Gets the total length of the text.",
+      "readonly": true
+    }
+  ],
+  "methods": [
+    {
+      "name": "Clear",
+      "description": "Clears all content from the editor.",
+      "parameters": [],
+      "returns": null
+    },
+    {
+      "name": "LoadFromFile",
+      "description": "Loads content from a file (supports RTF and TXT).",
+      "parameters": [
+        {
+          "name": "filePath",
+          "type": "STRING",
+          "description": "Full path to the file"
+        }
+      ],
+      "returns": null
+    },
+    {
+      "name": "SaveToFile",
+      "description": "Saves content to a file (RTF or TXT based on extension).",
+      "parameters": [
+        {
+          "name": "filePath",
+          "type": "STRING",
+          "description": "Full path for the file"
+        }
+      ],
+      "returns": null
+    },
+    {
+      "name": "AppendText",
+      "description": "Appends text at the end of the document.",
+      "parameters": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "description": "Text to append"
+        }
+      ],
+      "returns": null
+    },
+    {
+      "name": "InsertText",
+      "description": "Inserts text at the current cursor position.",
+      "parameters": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "description": "Text to insert"
+        }
+      ],
+      "returns": null
+    },
+    {
+      "name": "SetBold",
+      "description": "Applies bold formatting to selected text.",
+      "parameters": [],
+      "returns": null
+    },
+    {
+      "name": "SetItalic",
+      "description": "Applies italic formatting to selected text.",
+      "parameters": [],
+      "returns": null
+    },
+    {
+      "name": "SetUnderline",
+      "description": "Applies underline formatting to selected text.",
+      "parameters": [],
+      "returns": null
+    },
+    {
+      "name": "SetStrikethrough",
+      "description": "Applies strikethrough formatting to selected text.",
+      "parameters": [],
+      "returns": null
+    },
+    {
+      "name": "SetFontColor",
+      "description": "Sets the font color for selected text.",
+      "parameters": [
+        {
+          "name": "hexColor",
+          "type": "STRING",
+          "description": "Color in hex format (e.g., \"#FF0000\" for red)"
+        }
+      ],
+      "returns": null
+    },
+    {
+      "name": "SetBackgroundColor",
+      "description": "Sets the background/highlight color for selected text.",
+      "parameters": [
+        {
+          "name": "hexColor",
+          "type": "STRING",
+          "description": "Color in hex format (e.g., \"#FFFF00\" for yellow)"
+        }
+      ],
+      "returns": null
+    },
+    {
+      "name": "SetFont",
+      "description": "Sets the font for selected text.",
+      "parameters": [
+        {
+          "name": "fontName",
+          "type": "STRING",
+          "description": "Font family name"
+        },
+        {
+          "name": "fontSize",
+          "type": "REAL",
+          "description": "Font size in points"
+        }
+      ],
+      "returns": null
+    },
+    {
+      "name": "AlignLeft",
+      "description": "Aligns the current paragraph to the left.",
+      "parameters": [],
+      "returns": null
+    },
+    {
+      "name": "AlignCenter",
+      "description": "Centers the current paragraph.",
+      "parameters": [],
+      "returns": null
+    },
+    {
+      "name": "AlignRight",
+      "description": "Aligns the current paragraph to the right.",
+      "parameters": [],
+      "returns": null
+    },
+    {
+      "name": "Cut",
+      "description": "Cuts the selected text to clipboard.",
+      "parameters": [],
+      "returns": null
+    },
+    {
+      "name": "Copy",
+      "description": "Copies the selected text to clipboard.",
+      "parameters": [],
+      "returns": null
+    },
+    {
+      "name": "Paste",
+      "description": "Pastes content from clipboard.",
+      "parameters": [],
+      "returns": null
+    },
+    {
+      "name": "SelectAll",
+      "description": "Selects all text in the editor.",
+      "parameters": [],
+      "returns": null
+    },
+    {
+      "name": "Undo",
+      "description": "Undoes the last action.",
+      "parameters": [],
+      "returns": null
+    },
+    {
+      "name": "Redo",
+      "description": "Redoes the last undone action.",
+      "parameters": [],
+      "returns": null
+    },
+    {
+      "name": "Find",
+      "description": "Finds and selects the first occurrence of text.",
+      "parameters": [
+        {
+          "name": "searchText",
+          "type": "STRING",
+          "description": "Text to find"
+        }
+      ],
+      "returns": null
+    },
+    {
+      "name": "FindNext",
+      "description": "Finds and selects the next occurrence of text.",
+      "parameters": [
+        {
+          "name": "searchText",
+          "type": "STRING",
+          "description": "Text to find"
+        }
+      ],
+      "returns": null
+    },
+    {
+      "name": "Replace",
+      "description": "Replaces the currently selected text.",
+      "parameters": [
+        {
+          "name": "newText",
+          "type": "STRING",
+          "description": "Replacement text"
+        }
+      ],
+      "returns": null
+    },
+    {
+      "name": "ReplaceAll",
+      "description": "Replaces all occurrences of search text.",
+      "parameters": [
+        {
+          "name": "searchText",
+          "type": "STRING",
+          "description": "Text to find"
+        },
+        {
+          "name": "replaceText",
+          "type": "STRING",
+          "description": "Replacement text"
+        }
+      ],
+      "returns": null
+    },
+    {
+      "name": "ScrollToEnd",
+      "description": "Scrolls to the end of the document.",
+      "parameters": [],
+      "returns": null
+    },
+    {
+      "name": "ScrollToTop",
+      "description": "Scrolls to the beginning of the document.",
+      "parameters": [],
+      "returns": null
+    },
+    {
+      "name": "SetFocus",
+      "description": "Sets focus to the editor.",
+      "parameters": [],
+      "returns": null
+    },
+    {
+      "name": "About",
+      "description": "Displays control name and version information.",
+      "parameters": [],
+      "returns": null
+    }
+  ],
+  "events": [
+    {
+      "name": "ContentChanged",
+      "description": "Fired when the text content changes.",
+      "parameters": []
+    },
+    {
+      "name": "SelectionChanged",
+      "description": "Fired when the selection changes.",
+      "parameters": [
+        {
+          "name": "selectionStart",
+          "type": "LONG",
+          "description": "Start position of selection"
+        },
+        {
+          "name": "selectionLength",
+          "type": "LONG",
+          "description": "Length of selection"
+        }
+      ]
+    },
+    {
+      "name": "FileOperationComplete",
+      "description": "Fired when a file operation completes.",
+      "parameters": [
+        {
+          "name": "operation",
+          "type": "STRING",
+          "description": "Operation name (Load, Save)"
+        },
+        {
+          "name": "filePath",
+          "type": "STRING",
+          "description": "Path of the file"
+        },
+        {
+          "name": "success",
+          "type": "BYTE",
+          "description": "Whether the operation succeeded"
+        }
+      ]
+    },
+    {
+      "name": "ModifiedStateChanged",
+      "description": "Fired when the modified state changes.",
+      "parameters": [
+        {
+          "name": "isModified",
+          "type": "BYTE",
+          "description": "Current modified state"
+        }
+      ]
+    },
+    {
+      "name": "KeyPressed",
+      "description": "Fired when a key is pressed in the editor.",
+      "parameters": [
+        {
+          "name": "keyCode",
+          "type": "LONG",
+          "description": "The key code pressed"
+        },
+        {
+          "name": "shift",
+          "type": "BYTE",
+          "description": "Whether shift was held"
+        },
+        {
+          "name": "ctrl",
+          "type": "BYTE",
+          "description": "Whether ctrl was held"
+        }
+      ]
+    }
+  ]
+}
