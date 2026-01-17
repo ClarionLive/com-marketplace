@@ -1,0 +1,10 @@
+﻿[FriendlyName]
+TextEditorCOMControl
+[ProgID]
+TextEditorCOM.TextEditorCOMControl
+[FilenameNoExtenstion]
+TextEditorCOM
+[Description]
+Rich Text Editor COM Control for Clarion.
+[ObjectName]
+TextEditorCOM_TextEditorCOMControl

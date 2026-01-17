@@ -1,0 +1,355 @@
+﻿[Method]
+GetPlainText
+[MethodDescription]
+Gets the plain text content of the editor.
+
+[Method]
+SetPlainText
+[MethodDescription]
+Sets the plain text content of the editor.
+[Parameter]
+value
+[ParameterType]
+STRING
+[ParameterDescription]
+The plain text to set
+
+[Method]
+GetRtfContent
+[MethodDescription]
+Gets the Rich Text Format (RTF) content.
+
+[Method]
+SetRtfContent
+[MethodDescription]
+Sets the Rich Text Format (RTF) content.
+[Parameter]
+value
+[ParameterType]
+STRING
+[ParameterDescription]
+The RTF content to set
+
+[Method]
+GetIsModified
+[MethodDescription]
+Gets whether the content has been modified.
+
+[Method]
+SetIsModified
+[MethodDescription]
+Sets whether the content has been modified.
+[Parameter]
+value
+[ParameterType]
+BYTE
+[ParameterDescription]
+The modified state to set
+
+[Method]
+GetFontName
+[MethodDescription]
+Gets the current font name.
+
+[Method]
+SetFontName
+[MethodDescription]
+Sets the current font name.
+[Parameter]
+value
+[ParameterType]
+STRING
+[ParameterDescription]
+The font name to set
+
+[Method]
+GetFontSize
+[MethodDescription]
+Gets the current font size in points.
+
+[Method]
+SetFontSize
+[MethodDescription]
+Sets the current font size in points.
+[Parameter]
+value
+[ParameterType]
+REAL
+[ParameterDescription]
+The font size to set
+
+[Method]
+Clear
+[MethodDescription]
+Clears all content from the editor.
+
+[Method]
+LoadFromFile
+[MethodDescription]
+Loads content from a file (supports RTF and TXT).
+[Parameter]
+filePath
+[ParameterType]
+STRING
+[ParameterDescription]
+Full path to the file
+
+[Method]
+SaveToFile
+[MethodDescription]
+Saves content to a file (RTF or TXT based on extension).
+[Parameter]
+filePath
+[ParameterType]
+STRING
+[ParameterDescription]
+Full path for the file
+
+[Method]
+AppendText
+[MethodDescription]
+Appends text at the end of the document.
+[Parameter]
+text
+[ParameterType]
+STRING
+[ParameterDescription]
+Text to append
+
+[Method]
+InsertText
+[MethodDescription]
+Inserts text at the current cursor position.
+[Parameter]
+text
+[ParameterType]
+STRING
+[ParameterDescription]
+Text to insert
+
+[Method]
+SetBold
+[MethodDescription]
+Applies bold formatting to selected text.
+
+[Method]
+SetItalic
+[MethodDescription]
+Applies italic formatting to selected text.
+
+[Method]
+SetUnderline
+[MethodDescription]
+Applies underline formatting to selected text.
+
+[Method]
+SetStrikethrough
+[MethodDescription]
+Applies strikethrough formatting to selected text.
+
+[Method]
+SetFontColor
+[MethodDescription]
+Sets the font color for selected text.
+[Parameter]
+hexColor
+[ParameterType]
+STRING
+[ParameterDescription]
+Color in hex format (e.g., "#FF0000" for red)
+
+[Method]
+SetBackgroundColor
+[MethodDescription]
+Sets the background/highlight color for selected text.
+[Parameter]
+hexColor
+[ParameterType]
+STRING
+[ParameterDescription]
+Color in hex format (e.g., "#FFFF00" for yellow)
+
+[Method]
+SetFont
+[MethodDescription]
+Sets the font for selected text.
+[Parameter]
+fontName
+[ParameterType]
+STRING
+[ParameterDescription]
+Font family name
+[Parameter]
+fontSize
+[ParameterType]
+REAL
+[ParameterDescription]
+Font size in points
+
+[Method]
+AlignLeft
+[MethodDescription]
+Aligns the current paragraph to the left.
+
+[Method]
+AlignCenter
+[MethodDescription]
+Centers the current paragraph.
+
+[Method]
+AlignRight
+[MethodDescription]
+Aligns the current paragraph to the right.
+
+[Method]
+Cut
+[MethodDescription]
+Cuts the selected text to clipboard.
+
+[Method]
+Copy
+[MethodDescription]
+Copies the selected text to clipboard.
+
+[Method]
+Paste
+[MethodDescription]
+Pastes content from clipboard.
+
+[Method]
+SelectAll
+[MethodDescription]
+Selects all text in the editor.
+
+[Method]
+Undo
+[MethodDescription]
+Undoes the last action.
+
+[Method]
+Redo
+[MethodDescription]
+Redoes the last undone action.
+
+[Method]
+GetCanUndo
+[MethodDescription]
+Gets whether undo is available.
+
+[Method]
+GetCanRedo
+[MethodDescription]
+Gets whether redo is available.
+
+[Method]
+GetSelectedText
+[MethodDescription]
+Gets the currently selected text.
+
+[Method]
+GetSelectionStart
+[MethodDescription]
+Gets the selection start position.
+
+[Method]
+SetSelectionStart
+[MethodDescription]
+Sets the selection start position.
+[Parameter]
+value
+[ParameterType]
+LONG
+[ParameterDescription]
+The selection start position to set
+
+[Method]
+GetSelectionLength
+[MethodDescription]
+Gets the selection length.
+
+[Method]
+SetSelectionLength
+[MethodDescription]
+Sets the selection length.
+[Parameter]
+value
+[ParameterType]
+LONG
+[ParameterDescription]
+The selection length to set
+
+[Method]
+GetTextLength
+[MethodDescription]
+Gets the total length of the text.
+
+[Method]
+Find
+[MethodDescription]
+Finds and selects the first occurrence of text.
+[Parameter]
+searchText
+[ParameterType]
+STRING
+[ParameterDescription]
+Text to find
+
+[Method]
+FindNext
+[MethodDescription]
+Finds and selects the next occurrence of text.
+[Parameter]
+searchText
+[ParameterType]
+STRING
+[ParameterDescription]
+Text to find
+
+[Method]
+Replace
+[MethodDescription]
+Replaces the currently selected text.
+[Parameter]
+newText
+[ParameterType]
+STRING
+[ParameterDescription]
+Replacement text
+
+[Method]
+ReplaceAll
+[MethodDescription]
+Replaces all occurrences of search text.
+[Parameter]
+searchText
+[ParameterType]
+STRING
+[ParameterDescription]
+Text to find
+[Parameter]
+replaceText
+[ParameterType]
+STRING
+[ParameterDescription]
+Replacement text
+
+[Method]
+ScrollToEnd
+[MethodDescription]
+Scrolls to the end of the document.
+
+[Method]
+ScrollToTop
+[MethodDescription]
+Scrolls to the beginning of the document.
+
+[Method]
+SetFocus
+[MethodDescription]
+Sets focus to the editor.
+
+[Method]
+About
+[MethodDescription]
+Displays control name and version information.
+
