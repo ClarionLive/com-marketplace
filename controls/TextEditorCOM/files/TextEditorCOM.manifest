@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+  <assemblyIdentity
+      name="TextEditorCOM"
+      version="1.1.1.0"
+      processorArchitecture="x86"
+      type="win32"/>
+
+  <clrClass
+      clsid="{3558C5D9-20EA-4881-9050-44D717F05CA2}"
+      progid="TextEditorCOM.TextEditorCOMControl"
+      threadingModel="Apartment"
+      name="TextEditorCOM.TextEditorCOMControl"
+      runtimeVersion="v4.0.30319">
+  </clrClass>
+
+  <file name="TextEditorCOM.dll">
+     <typelib
+         tlbid="{7B4498A5-AD83-4CAC-BBF4-6832B72B523C}"
+         version="1.0"
+         helpdir=""
+         resourceid="0"
+         flags="HASDISKIMAGE"/>
+  </file>
+</assembly>

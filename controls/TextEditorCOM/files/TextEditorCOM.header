@@ -1,0 +1,14 @@
+﻿[ClarionPath]
+C:\Clarion12
+[ControlType]
+CSharp
+[Description]
+Rich Text Editor COM Control for Clarion
+[DLL]
+TextEditorCOM
+[Version]
+1.1.1.0
+[DllsToCopy]
+TextEditorCOM.dll
+[ProgID]
+TextEditorCOM.TextEditorCOMControl

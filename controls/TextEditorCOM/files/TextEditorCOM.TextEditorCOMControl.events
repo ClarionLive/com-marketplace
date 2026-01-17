@@ -1,0 +1,74 @@
+﻿[Event]
+ContentChanged
+[EventDescription]
+Fired when the text content changes.
+[Event]
+SelectionChanged
+[EventDescription]
+Fired when the selection changes.
+[Parameter1]
+selectionStart
+[Parameter1Type]
+LONG
+[Parameter1Description]
+Start position of selection
+[Parameter2]
+selectionLength
+[Parameter2Type]
+LONG
+[Parameter2Description]
+Length of selection
+[Event]
+FileOperationComplete
+[EventDescription]
+Fired when a file operation completes.
+[Parameter1]
+operation
+[Parameter1Type]
+STRING
+[Parameter1Description]
+Operation name (Load, Save)
+[Parameter2]
+filePath
+[Parameter2Type]
+STRING
+[Parameter2Description]
+Path of the file
+[Parameter3]
+success
+[Parameter3Type]
+BYTE
+[Parameter3Description]
+Whether the operation succeeded
+[Event]
+ModifiedStateChanged
+[EventDescription]
+Fired when the modified state changes.
+[Parameter1]
+isModified
+[Parameter1Type]
+BYTE
+[Parameter1Description]
+Current modified state
+[Event]
+KeyPressed
+[EventDescription]
+Fired when a key is pressed in the editor.
+[Parameter1]
+keyCode
+[Parameter1Type]
+LONG
+[Parameter1Description]
+The key code pressed
+[Parameter2]
+shift
+[Parameter2Type]
+BYTE
+[Parameter2Description]
+Whether shift was held
+[Parameter3]
+ctrl
+[Parameter3Type]
+BYTE
+[Parameter3Description]
+Whether ctrl was held
