@@ -1,0 +1,18 @@
+﻿[Event]
+ClockTick
+[EventDescription]
+Fired every time the clock ticks (once per second).
+[Parameter1]
+currentTime
+[Parameter1Type]
+STRING
+[Parameter1Description]
+The current time as a formatted string
+[Event]
+ClockStarted
+[EventDescription]
+Fired when the clock is started.
+[Event]
+ClockStopped
+[EventDescription]
+Fired when the clock is stopped.

@@ -1,0 +1,30 @@
+name: "LedClock"
+version: "1.0.2"
+description: "LED Clock Control - A simple digital clock with LED-style display."
+short_description: "A simple digital clock with LED-style display."
+prog_id: "LedClockCOM.LedClock"
+assembly_name: "LedClockCOM"
+control_type: "standard"
+ui_library: "WinForms"
+
+repository:
+  url: "https://github.com/peterparker57/LedClockCOM"
+  branch: "main"
+
+author:
+  name: "John Hickey"
+  github: "peterparker57"
+
+compatibility:
+  dotnet: "net472"
+  clarion:
+    min_version: "11.0"
+    tested_versions: ["11.0", "12.0"]
+
+category: "UI Controls"
+tags: ["clock", "time", "led", "display"]
+
+changelog:
+  - version: "1.0.2"
+    date: "2026-01-17"
+    changes: "Initial marketplace submission"
