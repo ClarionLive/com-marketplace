@@ -1,0 +1,103 @@
+﻿[Property]
+LedColor
+[PropertyType]
+LONG
+[PropertyDescription]
+Gets or sets the LED foreground color as an integer (RGB).
+
+[Property]
+BackgroundColor
+[PropertyType]
+LONG
+[PropertyDescription]
+Gets or sets the background color as an integer (RGB).
+
+[Property]
+Use24HourFormat
+[PropertyType]
+BYTE
+[PropertyDescription]
+Gets or sets whether to use 24-hour format (true) or 12-hour format (false).
+
+[Property]
+ShowSeconds
+[PropertyType]
+BYTE
+[PropertyDescription]
+Gets or sets whether to show seconds.
+
+[Property]
+IsRunning
+[PropertyType]
+BYTE
+[PropertyDescription]
+Gets or sets whether the clock is running.
+
+[Property]
+CurrentTime
+[PropertyType]
+STRING
+[PropertyDescription]
+Gets the current time as a formatted string.
+
+[Method]
+Start
+[MethodDescription]
+Starts the clock.
+
+[Method]
+Stop
+[MethodDescription]
+Stops the clock.
+
+[Method]
+SetLedColorRGB
+[MethodDescription]
+Sets the LED color using RGB values.
+[Parameter]
+red
+[ParameterType]
+LONG
+[ParameterDescription]
+The red parameter.
+[Parameter]
+green
+[ParameterType]
+LONG
+[ParameterDescription]
+The green parameter.
+[Parameter]
+blue
+[ParameterType]
+LONG
+[ParameterDescription]
+The blue parameter.
+
+[Method]
+SetBackgroundColorRGB
+[MethodDescription]
+Sets the background color using RGB values.
+[Parameter]
+red
+[ParameterType]
+LONG
+[ParameterDescription]
+The red parameter.
+[Parameter]
+green
+[ParameterType]
+LONG
+[ParameterDescription]
+The green parameter.
+[Parameter]
+blue
+[ParameterType]
+LONG
+[ParameterDescription]
+The blue parameter.
+
+[Method]
+About
+[MethodDescription]
+Displays control name and version information in a MessageBox.
+

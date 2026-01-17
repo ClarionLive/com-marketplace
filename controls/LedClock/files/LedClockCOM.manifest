@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+  <assemblyIdentity
+      name="LedClockCOM"
+      version="1.0.2.0"
+      processorArchitecture="x86"
+      type="win32"/>
+
+  <clrClass
+      clsid="{0E91E242-4BE2-4988-9C45-1C614C7B22D7}"
+      progid="LedClockCOM.LedClock"
+      threadingModel="Apartment"
+      name="LedClockCOM.LedClock"
+      runtimeVersion="v4.0.30319">
+  </clrClass>
+
+  <file name="LedClockCOM.dll">
+     <typelib
+         tlbid="{13EDFC70-A56B-4352-B1AE-D70763021CB7}"
+         version="1.0"
+         helpdir=""
+         resourceid="0"
+         flags="HASDISKIMAGE"/>
+  </file>
+</assembly>
