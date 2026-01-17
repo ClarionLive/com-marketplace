@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+  <assemblyIdentity
+      name="DocumentViewerCOM"
+      version="1.0.1.0"
+      processorArchitecture="x86"
+      type="win32"/>
+
+  <clrClass
+      clsid="{ab2764ac-bc66-41bb-8bb6-53b46bd0e38e}"
+      progid="DocumentViewerCOM.DocumentViewerCOMControl"
+      threadingModel="Apartment"
+      name="DocumentViewerCOM.DocumentViewerCOMControl"
+      runtimeVersion="v4.0.30319">
+  </clrClass>
+
+  <file name="DocumentViewerCOM.dll">
+     <typelib
+         tlbid="{f43b0c75-1c66-4388-b1b4-5322572fa404}"
+         version="1.0"
+         helpdir=""
+         resourceid="0"
+         flags="HASDISKIMAGE"/>
+  </file>
+</assembly>

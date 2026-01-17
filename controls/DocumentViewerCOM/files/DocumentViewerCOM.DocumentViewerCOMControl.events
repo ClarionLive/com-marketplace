@@ -1,0 +1,100 @@
+﻿[Event]
+ControlReady
+[EventDescription]
+Fired when WebView2 is fully initialized and ready for use.
+[Event]
+ErrorOccurred
+[EventDescription]
+Fired when an error occurs.
+[Parameter1]
+errorMessage
+[Parameter1Type]
+STRING
+[Parameter1Description]
+Description of the error
+[Event]
+NavigationCompleted
+[EventDescription]
+Fired when navigation completes.
+[Parameter1]
+url
+[Parameter1Type]
+STRING
+[Parameter1Description]
+The URL that was navigated to
+[Parameter2]
+success
+[Parameter2Type]
+BYTE
+[Parameter2Description]
+Whether navigation succeeded
+[Event]
+NavigationStarting
+[EventDescription]
+Fired when navigation starts.
+[Parameter1]
+url
+[Parameter1Type]
+STRING
+[Parameter1Description]
+The URL being navigated to
+[Event]
+DocumentLoaded
+[EventDescription]
+Fired when the document has finished loading.
+[Event]
+ZoomChanged
+[EventDescription]
+Fired when the zoom level changes.
+[Parameter1]
+zoomLevel
+[Parameter1Type]
+LONG
+[Parameter1Description]
+The new zoom level (percentage)
+[Event]
+PageChanged
+[EventDescription]
+Fired when the current page changes.
+[Parameter1]
+currentPage
+[Parameter1Type]
+LONG
+[Parameter1Description]
+The current page number (1-based)
+[Parameter2]
+totalPages
+[Parameter2Type]
+LONG
+[Parameter2Description]
+The total number of pages
+[Event]
+SearchResultsChanged
+[EventDescription]
+Fired when search results are found.
+[Parameter1]
+matchCount
+[Parameter1Type]
+LONG
+[Parameter1Description]
+The number of matches found
+[Parameter2]
+currentMatch
+[Parameter2Type]
+LONG
+[Parameter2Description]
+The current match index (1-based)
+[Event]
+PrintStarted
+[EventDescription]
+Fired when print operation starts.
+[Event]
+PrintCompleted
+[EventDescription]
+Fired when print operation completes.
+[Parameter1]
+success
+[Parameter1Type]
+BYTE
+[Parameter1Description]
+Whether printing succeeded
