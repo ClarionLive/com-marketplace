@@ -1,0 +1,10 @@
+﻿[FriendlyName]
+DocumentViewerCOMControl
+[ProgID]
+DocumentViewerCOM.DocumentViewerCOMControl
+[FilenameNoExtenstion]
+DocumentViewerCOM
+[Description]
+Host object for JavaScript to C# communication.
+[ObjectName]
+DocumentViewerCOM_DocumentViewerCOMControl

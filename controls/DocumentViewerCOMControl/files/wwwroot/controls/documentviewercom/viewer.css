@@ -1,0 +1,260 @@
+/* Document Viewer Styles */
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f5f5;
+}
+
+/* Toolbar Styles */
+#toolbar {
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+    background: linear-gradient(to bottom, #ffffff, #f0f0f0);
+    border-bottom: 1px solid #ccc;
+    flex-shrink: 0;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.toolbar-group {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.toolbar-separator {
+    width: 1px;
+    height: 24px;
+    background-color: #ccc;
+    margin: 0 6px;
+}
+
+.toolbar-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    background: transparent;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+    transition: all 0.15s ease;
+}
+
+.toolbar-btn:hover {
+    background-color: #e0e0e0;
+    border-color: #ccc;
+}
+
+.toolbar-btn:active {
+    background-color: #d0d0d0;
+}
+
+.toolbar-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.toolbar-btn .icon {
+    font-size: 12px;
+}
+
+/* Page navigation */
+.page-info {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin: 0 4px;
+    font-size: 13px;
+}
+
+.page-input {
+    width: 45px;
+    height: 24px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 13px;
+}
+
+.page-input:focus {
+    outline: none;
+    border-color: #0078d4;
+}
+
+/* Zoom controls */
+.zoom-select {
+    height: 26px;
+    padding: 0 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background: white;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.zoom-select:focus {
+    outline: none;
+    border-color: #0078d4;
+}
+
+/* Search controls */
+.search-group {
+    flex: 1;
+    max-width: 350px;
+}
+
+.search-input {
+    flex: 1;
+    height: 26px;
+    min-width: 120px;
+    padding: 0 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 13px;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #0078d4;
+}
+
+.search-results {
+    font-size: 12px;
+    color: #666;
+    min-width: 50px;
+    text-align: center;
+}
+
+/* Viewer Container */
+#viewerContainer {
+    flex: 1;
+    overflow: auto;
+    background-color: #e0e0e0;
+    padding: 20px;
+}
+
+#documentContent {
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    margin: 0 auto;
+    min-height: 100%;
+    padding: 40px;
+    transform-origin: top center;
+    transition: transform 0.1s ease;
+}
+
+/* Welcome message */
+#welcomeMessage {
+    text-align: center;
+    color: #666;
+    padding: 60px 20px;
+}
+
+#welcomeMessage h2 {
+    margin: 0 0 16px 0;
+    color: #333;
+    font-weight: 400;
+}
+
+#welcomeMessage p {
+    margin: 8px 0;
+}
+
+#welcomeMessage .hint {
+    font-size: 12px;
+    color: #999;
+    margin-top: 20px;
+}
+
+/* Search highlighting */
+.search-highlight {
+    background-color: #ffff00;
+    padding: 0 2px;
+    border-radius: 2px;
+}
+
+.search-highlight.current {
+    background-color: #ff9632;
+    color: white;
+}
+
+/* Status Bar */
+#statusBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 12px;
+    background: #f0f0f0;
+    border-top: 1px solid #ccc;
+    font-size: 12px;
+    color: #666;
+    flex-shrink: 0;
+}
+
+#statusText {
+    flex: 1;
+}
+
+#zoomStatus {
+    min-width: 50px;
+    text-align: right;
+}
+
+/* Print styles */
+@media print {
+    #toolbar,
+    #statusBar {
+        display: none !important;
+    }
+
+    #viewerContainer {
+        overflow: visible;
+        padding: 0;
+        background: white;
+    }
+
+    #documentContent {
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+/* Scrollbar styling */
+#viewerContainer::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+#viewerContainer::-webkit-scrollbar-track {
+    background: #f0f0f0;
+}
+
+#viewerContainer::-webkit-scrollbar-thumb {
+    background: #c0c0c0;
+    border-radius: 6px;
+    border: 2px solid #f0f0f0;
+}
+
+#viewerContainer::-webkit-scrollbar-thumb:hover {
+    background: #a0a0a0;
+}

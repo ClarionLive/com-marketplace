@@ -1,0 +1,30 @@
+name: "DocumentViewerCOMControl"
+version: "1.0.1.0"
+description: "Rich HTML Document Viewer COM Control for Clarion with printing, zoom, navigation, and search capabilities. This WebView2-based control provides a full-featured document viewer with support for HTML content, local files, and URLs. Features include zoom controls, page navigation, text search with highlighting, and printing support."
+short_description: "Rich HTML Document Viewer COM Control for Clarion with printing, zoom, navigation, and search capabilities."
+prog_id: "DocumentViewerCOM.DocumentViewerCOMControl"
+assembly_name: "DocumentViewerCOM"
+control_type: "webview2"
+ui_library: "WebView2"
+
+repository:
+  url: "https://github.com/peterparker57/HTMLDocumentViewer"
+  branch: "main"
+
+author:
+  name: "John Hickey"
+  github: "peterparker57"
+
+compatibility:
+  dotnet: "net472"
+  clarion:
+    min_version: "11.0"
+    tested_versions: ["11.0", "12.0"]
+
+category: "WebView2"
+tags: ["document-viewer", "html", "webview2", "printing", "zoom"]
+
+changelog:
+  - version: "1.0.1.0"
+    date: "2026-01-17"
+    changes: "Initial marketplace submission"

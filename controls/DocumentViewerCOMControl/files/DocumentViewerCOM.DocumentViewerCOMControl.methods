@@ -1,0 +1,248 @@
+﻿[Property]
+IsReady
+[PropertyType]
+BYTE
+[PropertyDescription]
+Gets whether WebView2 is fully initialized and ready.
+
+[Property]
+LastError
+[PropertyType]
+STRING
+[PropertyDescription]
+Gets the last error message.
+
+[Property]
+Source
+[PropertyType]
+STRING
+[PropertyDescription]
+Gets the current source URL or content identifier.
+
+[Property]
+ZoomLevel
+[PropertyType]
+LONG
+[PropertyDescription]
+Gets or sets the current zoom level (percentage, e.g., 100 = 100%).
+
+[Property]
+CurrentPage
+[PropertyType]
+LONG
+[PropertyDescription]
+Gets the current page number (1-based).
+
+[Property]
+TotalPages
+[PropertyType]
+LONG
+[PropertyDescription]
+Gets the total number of pages in the document.
+
+[Property]
+IsSearchActive
+[PropertyType]
+BYTE
+[PropertyDescription]
+Gets whether a search is currently active.
+
+[Property]
+SearchMatchCount
+[PropertyType]
+LONG
+[PropertyDescription]
+Gets the number of search matches found.
+
+[Method]
+Navigate
+[MethodDescription]
+Navigate to a URL.
+[Parameter]
+url
+[ParameterType]
+STRING
+[ParameterDescription]
+The URL to navigate to
+
+[Method]
+LoadHtml
+[MethodDescription]
+Load HTML content directly from a string.
+[Parameter]
+htmlContent
+[ParameterType]
+STRING
+[ParameterDescription]
+The HTML content to display
+
+[Method]
+LoadFile
+[MethodDescription]
+Load HTML content from a local file path.
+[Parameter]
+filePath
+[ParameterType]
+STRING
+[ParameterDescription]
+The path to the HTML file
+
+[Method]
+Refresh
+[MethodDescription]
+Refresh the current page.
+
+[Method]
+GoBack
+[MethodDescription]
+Navigate back in history.
+
+[Method]
+GoForward
+[MethodDescription]
+Navigate forward in history.
+
+[Method]
+CanGoBack
+[MethodDescription]
+Check if back navigation is available.
+
+[Method]
+CanGoForward
+[MethodDescription]
+Check if forward navigation is available.
+
+[Method]
+ZoomIn
+[MethodDescription]
+Zoom in by a specified increment (default 10%).
+
+[Method]
+ZoomOut
+[MethodDescription]
+Zoom out by a specified increment (default 10%).
+
+[Method]
+ZoomReset
+[MethodDescription]
+Reset zoom to 100%.
+
+[Method]
+FitToWidth
+[MethodDescription]
+Fit document width to the viewer width.
+
+[Method]
+FitToPage
+[MethodDescription]
+Fit entire page to the viewer.
+
+[Method]
+GoToPage
+[MethodDescription]
+Go to a specific page number.
+[Parameter]
+pageNumber
+[ParameterType]
+LONG
+[ParameterDescription]
+The page number to navigate to (1-based)
+
+[Method]
+FirstPage
+[MethodDescription]
+Go to the first page.
+
+[Method]
+LastPage
+[MethodDescription]
+Go to the last page.
+
+[Method]
+NextPage
+[MethodDescription]
+Go to the next page.
+
+[Method]
+PreviousPage
+[MethodDescription]
+Go to the previous page.
+
+[Method]
+Search
+[MethodDescription]
+Start a search for the specified text.
+[Parameter]
+searchText
+[ParameterType]
+STRING
+[ParameterDescription]
+The text to search for
+
+[Method]
+FindNext
+[MethodDescription]
+Find the next occurrence of the search text.
+
+[Method]
+FindPrevious
+[MethodDescription]
+Find the previous occurrence of the search text.
+
+[Method]
+ClearSearch
+[MethodDescription]
+Clear the current search and highlights.
+
+[Method]
+Print
+[MethodDescription]
+Print the current document using the system print dialog.
+
+[Method]
+PrintSilent
+[MethodDescription]
+Print the current document silently to the default printer.
+
+[Method]
+PrintPreview
+[MethodDescription]
+Show print preview.
+
+[Method]
+ExecuteScript
+[MethodDescription]
+Execute JavaScript code in the current page.
+[Parameter]
+script
+[ParameterType]
+STRING
+[ParameterDescription]
+The JavaScript code to execute
+
+[Method]
+PostMessage
+[MethodDescription]
+Post a message to JavaScript. JavaScript can receive via: window.chrome.webview.addEventListener('message', handler)
+[Parameter]
+message
+[ParameterType]
+STRING
+[ParameterDescription]
+The message to send (string or JSON)
+
+[Method]
+GetHtmlContent
+[MethodDescription]
+Get the current document content as HTML.
+
+[Method]
+GetTextContent
+[MethodDescription]
+Get the current document content as plain text.
+
+[Method]
+About
+[MethodDescription]
+Displays control name and version information in a MessageBox.
+

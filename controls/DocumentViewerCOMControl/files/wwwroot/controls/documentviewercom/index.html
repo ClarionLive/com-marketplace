@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Viewer</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="viewer.css">
+</head>
+<body>
+    <!-- Toolbar -->
+    <div id="toolbar">
+        <!-- Navigation controls -->
+        <div class="toolbar-group">
+            <button id="btnFirstPage" title="First Page" class="toolbar-btn">
+                <span class="icon">&#x23EE;</span>
+            </button>
+            <button id="btnPrevPage" title="Previous Page" class="toolbar-btn">
+                <span class="icon">&#x25C0;</span>
+            </button>
+            <span class="page-info">
+                <input type="number" id="currentPageInput" value="1" min="1" class="page-input">
+                <span>/</span>
+                <span id="totalPages">1</span>
+            </span>
+            <button id="btnNextPage" title="Next Page" class="toolbar-btn">
+                <span class="icon">&#x25B6;</span>
+            </button>
+            <button id="btnLastPage" title="Last Page" class="toolbar-btn">
+                <span class="icon">&#x23ED;</span>
+            </button>
+        </div>
+
+        <div class="toolbar-separator"></div>
+
+        <!-- Zoom controls -->
+        <div class="toolbar-group">
+            <button id="btnZoomOut" title="Zoom Out" class="toolbar-btn">
+                <span class="icon">&#x2212;</span>
+            </button>
+            <select id="zoomSelect" class="zoom-select">
+                <option value="50">50%</option>
+                <option value="75">75%</option>
+                <option value="100" selected>100%</option>
+                <option value="125">125%</option>
+                <option value="150">150%</option>
+                <option value="200">200%</option>
+                <option value="fitWidth">Fit Width</option>
+                <option value="fitPage">Fit Page</option>
+            </select>
+            <button id="btnZoomIn" title="Zoom In" class="toolbar-btn">
+                <span class="icon">&#x002B;</span>
+            </button>
+        </div>
+
+        <div class="toolbar-separator"></div>
+
+        <!-- Search controls -->
+        <div class="toolbar-group search-group">
+            <input type="text" id="searchInput" placeholder="Search..." class="search-input">
+            <button id="btnFindPrev" title="Find Previous" class="toolbar-btn">
+                <span class="icon">&#x25B2;</span>
+            </button>
+            <button id="btnFindNext" title="Find Next" class="toolbar-btn">
+                <span class="icon">&#x25BC;</span>
+            </button>
+            <span id="searchResults" class="search-results"></span>
+            <button id="btnClearSearch" title="Clear Search" class="toolbar-btn">
+                <span class="icon">&#x2715;</span>
+            </button>
+        </div>
+
+        <div class="toolbar-separator"></div>
+
+        <!-- Print controls -->
+        <div class="toolbar-group">
+            <button id="btnPrint" title="Print" class="toolbar-btn">
+                <span class="icon">&#x1F5B6;</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Document container -->
+    <div id="viewerContainer">
+        <div id="documentContent">
+            <div id="welcomeMessage">
+                <h2>Document Viewer</h2>
+                <p>Load an HTML document to view it here.</p>
+                <p class="hint">Use LoadHtml() or LoadFile() from Clarion to display content.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Status bar -->
+    <div id="statusBar">
+        <span id="statusText">Ready</span>
+        <span id="zoomStatus">100%</span>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

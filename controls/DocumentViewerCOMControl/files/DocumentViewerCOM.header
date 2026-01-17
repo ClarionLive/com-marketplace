@@ -1,0 +1,26 @@
+﻿[ClarionPath]
+C:\Clarion12
+[ControlType]
+WebView2
+[Description]
+DocumentViewerCOM - Rich HTML Document Viewer COM Control for Clarion with printing, zoom, navigation, and search capabilities
+[DLL]
+DocumentViewerCOM
+[ControlFolder]
+HTMLDocumentViewer
+[Version]
+1.0.1.0
+[DllsToCopy]
+Microsoft.Web.WebView2.Core.dll
+DocumentViewerCOM.dll
+Microsoft.Web.WebView2.WinForms.dll
+Microsoft.Web.WebView2.Wpf.dll
+Newtonsoft.Json.dll
+WebView2Loader.dll
+[ControlsToCopy]
+controls/documentviewercom/index.html
+controls/documentviewercom/viewer.css
+controls/documentviewercom/app.js
+css/styles.css
+[ProgID]
+DocumentViewerCOM.DocumentViewerCOMControl
