@@ -24,7 +24,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm install ajv-cli js-yaml
+          npm install ajv-cli ajv-formats js-yaml
 
       - name: Get changed controls
         id: changed-files
@@ -55,7 +55,7 @@ jobs:
               " > /tmp/manifest.json
 
               # Validate against schema
-              npx ajv validate -s schemas/manifest.schema.json -d /tmp/manifest.json
+              npx ajv validate -c ajv-formats -s schemas/manifest.schema.json -d /tmp/manifest.json
 
               if [ $? -eq 0 ]; then
                 echo "$control_name manifest is valid"
