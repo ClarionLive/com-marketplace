@@ -1,0 +1,142 @@
+{
+  "properties": [
+    {
+      "name": "LedColor",
+      "type": "LONG",
+      "description": "Gets or sets the LED foreground color as an integer (RGB).",
+      "readonly": false
+    },
+    {
+      "name": "BackgroundColor",
+      "type": "LONG",
+      "description": "Gets or sets the background color as an integer (RGB).",
+      "readonly": false
+    },
+    {
+      "name": "Use24HourFormat",
+      "type": "BYTE",
+      "description": "Gets or sets whether to use 24-hour format (true) or 12-hour format (false).",
+      "readonly": false
+    },
+    {
+      "name": "ShowSeconds",
+      "type": "BYTE",
+      "description": "Gets or sets whether to show seconds.",
+      "readonly": false
+    },
+    {
+      "name": "IsRunning",
+      "type": "BYTE",
+      "description": "Gets or sets whether the clock is running.",
+      "readonly": false
+    },
+    {
+      "name": "CurrentTime",
+      "type": "STRING",
+      "description": "Gets the current time as a formatted string.",
+      "readonly": true
+    }
+  ],
+  "methods": [
+    {
+      "name": "Start",
+      "description": "Starts the clock.",
+      "parameters": [],
+      "returns": {
+        "type": "void",
+        "description": ""
+      }
+    },
+    {
+      "name": "Stop",
+      "description": "Stops the clock.",
+      "parameters": [],
+      "returns": {
+        "type": "void",
+        "description": ""
+      }
+    },
+    {
+      "name": "SetLedColorRGB",
+      "description": "Sets the LED color using RGB values.",
+      "parameters": [
+        {
+          "name": "red",
+          "type": "LONG",
+          "description": "The red component (0-255)."
+        },
+        {
+          "name": "green",
+          "type": "LONG",
+          "description": "The green component (0-255)."
+        },
+        {
+          "name": "blue",
+          "type": "LONG",
+          "description": "The blue component (0-255)."
+        }
+      ],
+      "returns": {
+        "type": "void",
+        "description": ""
+      }
+    },
+    {
+      "name": "SetBackgroundColorRGB",
+      "description": "Sets the background color using RGB values.",
+      "parameters": [
+        {
+          "name": "red",
+          "type": "LONG",
+          "description": "The red component (0-255)."
+        },
+        {
+          "name": "green",
+          "type": "LONG",
+          "description": "The green component (0-255)."
+        },
+        {
+          "name": "blue",
+          "type": "LONG",
+          "description": "The blue component (0-255)."
+        }
+      ],
+      "returns": {
+        "type": "void",
+        "description": ""
+      }
+    },
+    {
+      "name": "About",
+      "description": "Displays control name and version information in a MessageBox.",
+      "parameters": [],
+      "returns": {
+        "type": "void",
+        "description": ""
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "ClockTick",
+      "description": "Fired every time the clock ticks (once per second).",
+      "parameters": [
+        {
+          "name": "currentTime",
+          "type": "STRING",
+          "description": "The current time as a formatted string"
+        }
+      ]
+    },
+    {
+      "name": "ClockStarted",
+      "description": "Fired when the clock is started.",
+      "parameters": []
+    },
+    {
+      "name": "ClockStopped",
+      "description": "Fired when the clock is stopped.",
+      "parameters": []
+    }
+  ]
+}
