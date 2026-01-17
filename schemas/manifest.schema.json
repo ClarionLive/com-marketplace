@@ -26,8 +26,8 @@
     },
     "version": {
       "type": "string",
-      "description": "Semantic version of the control",
-      "pattern": "^\\d+\\.\\d+\\.\\d+(-[a-zA-Z0-9.]+)?$"
+      "description": "Version of the control (MAJOR.MINOR.PATCH.BUILD)",
+      "pattern": "^\\d+\\.\\d+\\.\\d+\\.\\d+(-[a-zA-Z0-9.]+)?$"
     },
     "description": {
       "type": "string",
@@ -179,7 +179,7 @@
         "properties": {
           "version": {
             "type": "string",
-            "pattern": "^\\d+\\.\\d+\\.\\d+(-[a-zA-Z0-9.]+)?$"
+            "pattern": "^\\d+\\.\\d+\\.\\d+\\.\\d+(-[a-zA-Z0-9.]+)?$"
           },
           "date": {
             "type": "string",

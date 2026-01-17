@@ -44,7 +44,7 @@ This will:
 3. **Create manifest.yaml**
    ```yaml
    name: "Your Control Name"
-   version: "1.0.0"
+   version: "1.0.0.0"
    description: "Full description of your control"
    short_description: "One-line summary"
    prog_id: "YourNamespace.YourControl"
@@ -70,7 +70,7 @@ This will:
    tags: ["relevant", "tags"]
 
    changelog:
-     - version: "1.0.0"
+     - version: "1.0.0.0"
        date: "2025-01-11"
        changes: "Initial release"
    ```
@@ -94,7 +94,7 @@ Your submission must pass these checks:
 - All required fields present
 - Valid ProgID format (Namespace.ClassName)
 - Repository URL is accessible
-- Version follows semver format
+- Version follows 4-part format (MAJOR.MINOR.PATCH.BUILD)
 - Category is from approved list
 
 ### api-docs.json
@@ -136,7 +136,7 @@ To update an existing control:
 - Provide usage examples with Clarion code
 
 ### Versioning
-- Use semantic versioning (MAJOR.MINOR.PATCH)
+- Use 4-part versioning (MAJOR.MINOR.PATCH.BUILD)
 - Document breaking changes clearly
 - Maintain backward compatibility when possible
 
