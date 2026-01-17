@@ -1,0 +1,10 @@
+﻿[FriendlyName]
+LedClock
+[ProgID]
+LedClockCOM.LedClock
+[FilenameNoExtenstion]
+LedClockCOM
+[Description]
+LED Clock Control - A simple digital clock with LED-style display.
+[ObjectName]
+LedClockCOM_LedClock
