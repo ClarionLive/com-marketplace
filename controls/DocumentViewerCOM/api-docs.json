@@ -1,0 +1,397 @@
+{
+  "properties": [
+    {
+      "name": "IsReady",
+      "type": "BYTE",
+      "description": "Gets whether WebView2 is fully initialized and ready.",
+      "readonly": true
+    },
+    {
+      "name": "LastError",
+      "type": "STRING",
+      "description": "Gets the last error message.",
+      "readonly": true
+    },
+    {
+      "name": "Source",
+      "type": "STRING",
+      "description": "Gets the current source URL or content identifier.",
+      "readonly": true
+    },
+    {
+      "name": "ZoomLevel",
+      "type": "LONG",
+      "description": "Gets or sets the current zoom level (percentage, e.g., 100 = 100%).",
+      "readonly": false
+    },
+    {
+      "name": "CurrentPage",
+      "type": "LONG",
+      "description": "Gets the current page number (1-based).",
+      "readonly": true
+    },
+    {
+      "name": "TotalPages",
+      "type": "LONG",
+      "description": "Gets the total number of pages in the document.",
+      "readonly": true
+    },
+    {
+      "name": "IsSearchActive",
+      "type": "BYTE",
+      "description": "Gets whether a search is currently active.",
+      "readonly": true
+    },
+    {
+      "name": "SearchMatchCount",
+      "type": "LONG",
+      "description": "Gets the number of search matches found.",
+      "readonly": true
+    }
+  ],
+  "methods": [
+    {
+      "name": "Navigate",
+      "description": "Navigate to a URL.",
+      "parameters": [
+        {
+          "name": "url",
+          "type": "STRING",
+          "description": "The URL to navigate to"
+        }
+      ],
+      "returns": null
+    },
+    {
+      "name": "LoadHtml",
+      "description": "Load HTML content directly from a string.",
+      "parameters": [
+        {
+          "name": "htmlContent",
+          "type": "STRING",
+          "description": "The HTML content to display"
+        }
+      ],
+      "returns": null
+    },
+    {
+      "name": "LoadFile",
+      "description": "Load HTML content from a local file path.",
+      "parameters": [
+        {
+          "name": "filePath",
+          "type": "STRING",
+          "description": "The path to the HTML file"
+        }
+      ],
+      "returns": null
+    },
+    {
+      "name": "Refresh",
+      "description": "Refresh the current page.",
+      "parameters": [],
+      "returns": null
+    },
+    {
+      "name": "GoBack",
+      "description": "Navigate back in history.",
+      "parameters": [],
+      "returns": null
+    },
+    {
+      "name": "GoForward",
+      "description": "Navigate forward in history.",
+      "parameters": [],
+      "returns": null
+    },
+    {
+      "name": "CanGoBack",
+      "description": "Check if back navigation is available.",
+      "parameters": [],
+      "returns": {
+        "type": "BYTE",
+        "description": "True if back navigation is available"
+      }
+    },
+    {
+      "name": "CanGoForward",
+      "description": "Check if forward navigation is available.",
+      "parameters": [],
+      "returns": {
+        "type": "BYTE",
+        "description": "True if forward navigation is available"
+      }
+    },
+    {
+      "name": "ZoomIn",
+      "description": "Zoom in by a specified increment (default 10%).",
+      "parameters": [],
+      "returns": null
+    },
+    {
+      "name": "ZoomOut",
+      "description": "Zoom out by a specified increment (default 10%).",
+      "parameters": [],
+      "returns": null
+    },
+    {
+      "name": "ZoomReset",
+      "description": "Reset zoom to 100%.",
+      "parameters": [],
+      "returns": null
+    },
+    {
+      "name": "FitToWidth",
+      "description": "Fit document width to the viewer width.",
+      "parameters": [],
+      "returns": null
+    },
+    {
+      "name": "FitToPage",
+      "description": "Fit entire page to the viewer.",
+      "parameters": [],
+      "returns": null
+    },
+    {
+      "name": "GoToPage",
+      "description": "Go to a specific page number.",
+      "parameters": [
+        {
+          "name": "pageNumber",
+          "type": "LONG",
+          "description": "The page number to navigate to (1-based)"
+        }
+      ],
+      "returns": null
+    },
+    {
+      "name": "FirstPage",
+      "description": "Go to the first page.",
+      "parameters": [],
+      "returns": null
+    },
+    {
+      "name": "LastPage",
+      "description": "Go to the last page.",
+      "parameters": [],
+      "returns": null
+    },
+    {
+      "name": "NextPage",
+      "description": "Go to the next page.",
+      "parameters": [],
+      "returns": null
+    },
+    {
+      "name": "PreviousPage",
+      "description": "Go to the previous page.",
+      "parameters": [],
+      "returns": null
+    },
+    {
+      "name": "Search",
+      "description": "Start a search for the specified text.",
+      "parameters": [
+        {
+          "name": "searchText",
+          "type": "STRING",
+          "description": "The text to search for"
+        }
+      ],
+      "returns": null
+    },
+    {
+      "name": "FindNext",
+      "description": "Find the next occurrence of the search text.",
+      "parameters": [],
+      "returns": null
+    },
+    {
+      "name": "FindPrevious",
+      "description": "Find the previous occurrence of the search text.",
+      "parameters": [],
+      "returns": null
+    },
+    {
+      "name": "ClearSearch",
+      "description": "Clear the current search and highlights.",
+      "parameters": [],
+      "returns": null
+    },
+    {
+      "name": "Print",
+      "description": "Print the current document using the system print dialog.",
+      "parameters": [],
+      "returns": null
+    },
+    {
+      "name": "PrintSilent",
+      "description": "Print the current document silently to the default printer.",
+      "parameters": [],
+      "returns": null
+    },
+    {
+      "name": "PrintPreview",
+      "description": "Show print preview.",
+      "parameters": [],
+      "returns": null
+    },
+    {
+      "name": "ExecuteScript",
+      "description": "Execute JavaScript code in the current page.",
+      "parameters": [
+        {
+          "name": "script",
+          "type": "STRING",
+          "description": "The JavaScript code to execute"
+        }
+      ],
+      "returns": null
+    },
+    {
+      "name": "PostMessage",
+      "description": "Post a message to JavaScript. JavaScript can receive via: window.chrome.webview.addEventListener('message', handler)",
+      "parameters": [
+        {
+          "name": "message",
+          "type": "STRING",
+          "description": "The message to send (string or JSON)"
+        }
+      ],
+      "returns": null
+    },
+    {
+      "name": "GetHtmlContent",
+      "description": "Get the current document content as HTML.",
+      "parameters": [],
+      "returns": {
+        "type": "STRING",
+        "description": "The HTML content of the current document"
+      }
+    },
+    {
+      "name": "GetTextContent",
+      "description": "Get the current document content as plain text.",
+      "parameters": [],
+      "returns": {
+        "type": "STRING",
+        "description": "The text content of the current document"
+      }
+    },
+    {
+      "name": "About",
+      "description": "Displays control name and version information in a MessageBox.",
+      "parameters": [],
+      "returns": null
+    }
+  ],
+  "events": [
+    {
+      "name": "ControlReady",
+      "description": "Fired when WebView2 is fully initialized and ready for use.",
+      "parameters": []
+    },
+    {
+      "name": "ErrorOccurred",
+      "description": "Fired when an error occurs.",
+      "parameters": [
+        {
+          "name": "errorMessage",
+          "type": "STRING",
+          "description": "Description of the error"
+        }
+      ]
+    },
+    {
+      "name": "NavigationCompleted",
+      "description": "Fired when navigation completes.",
+      "parameters": [
+        {
+          "name": "url",
+          "type": "STRING",
+          "description": "The URL that was navigated to"
+        },
+        {
+          "name": "success",
+          "type": "BYTE",
+          "description": "Whether navigation succeeded"
+        }
+      ]
+    },
+    {
+      "name": "NavigationStarting",
+      "description": "Fired when navigation starts.",
+      "parameters": [
+        {
+          "name": "url",
+          "type": "STRING",
+          "description": "The URL being navigated to"
+        }
+      ]
+    },
+    {
+      "name": "DocumentLoaded",
+      "description": "Fired when the document has finished loading.",
+      "parameters": []
+    },
+    {
+      "name": "ZoomChanged",
+      "description": "Fired when the zoom level changes.",
+      "parameters": [
+        {
+          "name": "zoomLevel",
+          "type": "LONG",
+          "description": "The new zoom level (percentage)"
+        }
+      ]
+    },
+    {
+      "name": "PageChanged",
+      "description": "Fired when the current page changes.",
+      "parameters": [
+        {
+          "name": "currentPage",
+          "type": "LONG",
+          "description": "The current page number (1-based)"
+        },
+        {
+          "name": "totalPages",
+          "type": "LONG",
+          "description": "The total number of pages"
+        }
+      ]
+    },
+    {
+      "name": "SearchResultsChanged",
+      "description": "Fired when search results are found.",
+      "parameters": [
+        {
+          "name": "matchCount",
+          "type": "LONG",
+          "description": "The number of matches found"
+        },
+        {
+          "name": "currentMatch",
+          "type": "LONG",
+          "description": "The current match index (1-based)"
+        }
+      ]
+    },
+    {
+      "name": "PrintStarted",
+      "description": "Fired when print operation starts.",
+      "parameters": []
+    },
+    {
+      "name": "PrintCompleted",
+      "description": "Fired when print operation completes.",
+      "parameters": [
+        {
+          "name": "success",
+          "type": "BYTE",
+          "description": "Whether printing succeeded"
+        }
+      ]
+    }
+  ]
+}
