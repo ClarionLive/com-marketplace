@@ -68,8 +68,16 @@ jobs:
               if [ -f "$control_dir/api-docs.json" ]; then
                 echo "$control_name has api-docs.json"
 
-                # Validate JSON syntax
-                node -e "JSON.parse(require('fs').readFileSync('$control_dir/api-docs.json'))"
+                # Validate JSON syntax (strip UTF-8 BOM if present)
+                node -e "
+                  const fs = require('fs');
+                  let content = fs.readFileSync('$control_dir/api-docs.json', 'utf8');
+                  // Strip UTF-8 BOM if present
+                  if (content.charCodeAt(0) === 0xFEFF) {
+                    content = content.slice(1);
+                  }
+                  JSON.parse(content);
+                "
                 if [ $? -eq 0 ]; then
                   echo "$control_name api-docs.json is valid JSON"
                 else
