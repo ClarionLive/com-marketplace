@@ -1,0 +1,10 @@
+﻿[FriendlyName]
+ButtonCOMControl
+[ProgID]
+ButtonCOM.ButtonCOMControl
+[FilenameNoExtenstion]
+ButtonCOM
+[Description]
+Host object for JavaScript to C# communication.
+[ObjectName]
+ButtonCOM_ButtonCOMControl

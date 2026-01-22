@@ -1,0 +1,26 @@
+﻿[Event]
+ControlReady
+[EventDescription]
+Fired when WebView2 is fully initialized and ready for use.
+[Event]
+ErrorOccurred
+[EventDescription]
+Fired when an error occurs.
+[Parameter1]
+errorMessage
+[Parameter1Type]
+STRING
+[Parameter1Description]
+Description of the error
+[Event]
+ButtonClicked
+[EventDescription]
+Fired when the button is clicked.
+[Event]
+MouseEnter
+[EventDescription]
+Fired when the mouse enters the button area.
+[Event]
+MouseLeave
+[EventDescription]
+Fired when the mouse leaves the button area.

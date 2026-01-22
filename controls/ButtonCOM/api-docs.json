@@ -1,0 +1,117 @@
+{
+  "methods": [
+    {
+      "name": "UpdateAppearance",
+      "description": "Updates the button appearance with current property values. Call this after changing multiple properties for a single repaint.",
+      "parameters": [],
+      "returns": {
+        "type": "void",
+        "description": "No return value"
+      }
+    },
+    {
+      "name": "About",
+      "description": "Displays control name and version information in a MessageBox.",
+      "parameters": [],
+      "returns": {
+        "type": "void",
+        "description": "No return value"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "ControlReady",
+      "description": "Fired when WebView2 is fully initialized and ready for use.",
+      "parameters": []
+    },
+    {
+      "name": "ErrorOccurred",
+      "description": "Fired when an error occurs.",
+      "parameters": [
+        {
+          "name": "errorMessage",
+          "type": "STRING",
+          "description": "Description of the error"
+        }
+      ]
+    },
+    {
+      "name": "ButtonClicked",
+      "description": "Fired when the button is clicked.",
+      "parameters": []
+    },
+    {
+      "name": "MouseEnter",
+      "description": "Fired when the mouse enters the button area.",
+      "parameters": []
+    },
+    {
+      "name": "MouseLeave",
+      "description": "Fired when the mouse leaves the button area.",
+      "parameters": []
+    }
+  ],
+  "properties": [
+    {
+      "name": "IsReady",
+      "type": "BYTE",
+      "description": "Gets whether WebView2 is fully initialized and ready.",
+      "readonly": true
+    },
+    {
+      "name": "LastError",
+      "type": "STRING",
+      "description": "Gets the last error message.",
+      "readonly": true
+    },
+    {
+      "name": "Text",
+      "type": "STRING",
+      "description": "Gets or sets the button text.",
+      "readonly": false
+    },
+    {
+      "name": "BackgroundColor",
+      "type": "STRING",
+      "description": "Gets or sets the button background color (CSS color format, e.g., \"#3498db\" or \"blue\").",
+      "readonly": false
+    },
+    {
+      "name": "TextColor",
+      "type": "STRING",
+      "description": "Gets or sets the button text color (CSS color format).",
+      "readonly": false
+    },
+    {
+      "name": "HoverColor",
+      "type": "STRING",
+      "description": "Gets or sets the button hover background color (CSS color format).",
+      "readonly": false
+    },
+    {
+      "name": "FontSize",
+      "type": "LONG",
+      "description": "Gets or sets the button font size in pixels.",
+      "readonly": false
+    },
+    {
+      "name": "FontFamily",
+      "type": "STRING",
+      "description": "Gets or sets the button font family (CSS font-family format).",
+      "readonly": false
+    },
+    {
+      "name": "BorderRadius",
+      "type": "LONG",
+      "description": "Gets or sets the button border radius in pixels (for rounded corners).",
+      "readonly": false
+    },
+    {
+      "name": "Enabled",
+      "type": "BYTE",
+      "description": "Gets or sets whether the button is enabled.",
+      "readonly": false
+    }
+  ]
+}

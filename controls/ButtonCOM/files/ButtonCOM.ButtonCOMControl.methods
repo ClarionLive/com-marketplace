@@ -1,0 +1,80 @@
+﻿[Property]
+IsReady
+[PropertyType]
+BYTE
+[PropertyDescription]
+Gets whether WebView2 is fully initialized and ready.
+
+[Property]
+LastError
+[PropertyType]
+STRING
+[PropertyDescription]
+Gets the last error message.
+
+[Property]
+Text
+[PropertyType]
+STRING
+[PropertyDescription]
+Gets or sets the button text.
+
+[Property]
+BackgroundColor
+[PropertyType]
+STRING
+[PropertyDescription]
+Gets or sets the button background color (CSS color format, e.g., "#3498db" or "blue").
+
+[Property]
+TextColor
+[PropertyType]
+STRING
+[PropertyDescription]
+Gets or sets the button text color (CSS color format).
+
+[Property]
+HoverColor
+[PropertyType]
+STRING
+[PropertyDescription]
+Gets or sets the button hover background color (CSS color format).
+
+[Property]
+FontSize
+[PropertyType]
+LONG
+[PropertyDescription]
+Gets or sets the button font size in pixels.
+
+[Property]
+FontFamily
+[PropertyType]
+STRING
+[PropertyDescription]
+Gets or sets the button font family (CSS font-family format).
+
+[Property]
+BorderRadius
+[PropertyType]
+LONG
+[PropertyDescription]
+Gets or sets the button border radius in pixels (for rounded corners).
+
+[Property]
+Enabled
+[PropertyType]
+BYTE
+[PropertyDescription]
+Gets or sets whether the button is enabled.
+
+[Method]
+UpdateAppearance
+[MethodDescription]
+Updates the button appearance with current property values. Call this after changing multiple properties for a single repaint.
+
+[Method]
+About
+[MethodDescription]
+Displays control name and version information in a MessageBox.
+
