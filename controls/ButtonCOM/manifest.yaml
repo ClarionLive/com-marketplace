@@ -1,0 +1,30 @@
+name: "ButtonCOM"
+version: "1.0.0.0"
+description: "A customizable WebView2-based button control for Clarion with styleable appearance including colors, fonts, and hover effects."
+short_description: "Styled WebView2 button with customizable appearance"
+prog_id: "ButtonCOM.ButtonCOMControl"
+assembly_name: "ButtonCOM"
+control_type: "webview2"
+ui_library: "WebView2"
+
+repository:
+  url: "https://github.com/peterparker57/ButtonCOM"
+  branch: "master"
+
+author:
+  name: "John Hickey"
+  github: "peterparker57"
+
+compatibility:
+  dotnet: "net472"
+  clarion:
+    min_version: "11.0"
+    tested_versions: ["11.0", "12.0"]
+
+category: "WebView2"
+tags: ["button", "webview2", "styled", "ui"]
+
+changelog:
+  - version: "1.0.0.0"
+    date: "2026-01-21"
+    changes: "Initial release - Styled button with customizable colors, fonts, and hover effects"

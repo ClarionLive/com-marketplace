@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+  <assemblyIdentity
+      name="ButtonCOM"
+      version="1.0.0.0"
+      processorArchitecture="x86"
+      type="win32"/>
+
+  <clrClass
+      clsid="{B2E286B0-FE04-4F6F-9EE1-6DB673F28A4C}"
+      progid="ButtonCOM.ButtonCOMControl"
+      threadingModel="Apartment"
+      name="ButtonCOM.ButtonCOMControl"
+      runtimeVersion="v4.0.30319">
+  </clrClass>
+
+  <file name="ButtonCOM.dll">
+     <typelib
+         tlbid="{499C5B6F-7AB8-46D4-BBB7-B5CEFA3ED773}"
+         version="1.0"
+         helpdir=""
+         resourceid="0"
+         flags="HASDISKIMAGE"/>
+  </file>
+</assembly>
