@@ -208,6 +208,33 @@
       "description": "Gets whether notifications are pinned (sticky)",
       "parameters": [],
       "returns": { "type": "BYTE", "description": "1 if pinned, 0 if not" }
+    },
+    {
+      "name": "SetImageSize",
+      "description": "Sets the display size for the notification image in pixels. 0,0 = original size.",
+      "parameters": [
+        { "name": "width", "type": "LONG", "description": "Image width in pixels (0 = original)" },
+        { "name": "height", "type": "LONG", "description": "Image height in pixels (0 = original)" }
+      ],
+      "returns": { "type": "void", "description": "" }
+    },
+    {
+      "name": "GetImageWidth",
+      "description": "Gets the configured image display width (0 = original)",
+      "parameters": [],
+      "returns": { "type": "LONG", "description": "Image width in pixels" }
+    },
+    {
+      "name": "GetImageHeight",
+      "description": "Gets the configured image display height (0 = original)",
+      "parameters": [],
+      "returns": { "type": "LONG", "description": "Image height in pixels" }
+    },
+    {
+      "name": "ShowImageNotification",
+      "description": "Shows a notification with only an image (no title, message, or background chrome). Call SetImagePath first to set the image.",
+      "parameters": [],
+      "returns": { "type": "void", "description": "" }
     }
   ],
   "events": [
