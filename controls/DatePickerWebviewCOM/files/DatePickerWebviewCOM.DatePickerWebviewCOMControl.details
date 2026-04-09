@@ -1,0 +1,7 @@
+Name: DatePickerWebviewCOM
+Description: Date Picker COM Control for Clarion - WebView2 calendar popup with modern UI, quick navigation buttons, and month/year selectors
+ProgID: DatePickerWebviewCOM.DatePickerWebviewCOMControl
+AssemblyName: DatePickerWebviewCOM
+Version: 1.0.0.0
+ControlType: webview2
+UILibrary: WebView2

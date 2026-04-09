@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Date Picker</title>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+        font-family: 'Segoe UI', -apple-system, sans-serif;
+        background: #fff;
+        user-select: none;
+        overflow: hidden;
+    }
+
+    .calendar {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    /* Header - month/year with nav arrows */
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px 10px 4px;
+    }
+
+    .nav-btn {
+        background: none;
+        border: 1px solid transparent;
+        cursor: pointer;
+        font-size: 18px;
+        color: #64748b;
+        width: 26px;
+        height: 26px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6px;
+        transition: all 0.15s;
+        line-height: 1;
+    }
+
+    .nav-btn:hover {
+        background: #f1f5f9;
+        border-color: #e2e8f0;
+        color: #334155;
+    }
+
+    .month-year-selectors {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .month-year-selectors select {
+        font-family: 'Segoe UI', -apple-system, sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        color: #1e293b;
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 5px;
+        padding: 3px 4px;
+        cursor: pointer;
+        outline: none;
+        -webkit-appearance: auto;
+    }
+
+    .month-year-selectors select:hover {
+        border-color: #93c5fd;
+        background: #eff6ff;
+    }
+
+    .month-year-selectors select:focus {
+        border-color: #3b82f6;
+    }
+
+    #monthSelect { width: 90px; }
+    #yearSelect { width: 64px; }
+
+    /* Weekday headers */
+    .weekdays {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        padding: 0 8px;
+    }
+
+    .weekday {
+        font-size: 10px;
+        font-weight: 600;
+        color: #94a3b8;
+        text-align: center;
+        padding: 4px 0;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    /* Day grid */
+    .days {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        padding: 1px 8px;
+        gap: 1px;
+        flex: 1;
+    }
+
+    .day {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 30px;
+        margin: 0 auto;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: 500;
+        color: #334155;
+        transition: all 0.12s ease;
+        position: relative;
+    }
+
+    .day:hover {
+        background: #eff6ff;
+        color: #1e40af;
+    }
+
+    .day.today {
+        font-weight: 700;
+        color: #3b82f6;
+    }
+
+    .day.today::after {
+        content: '';
+        position: absolute;
+        bottom: 3px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background: #3b82f6;
+    }
+
+    .day.selected {
+        background: #3b82f6;
+        color: #fff;
+        font-weight: 600;
+    }
+
+    .day.selected.today::after {
+        background: #fff;
+    }
+
+    .day.selected:hover {
+        background: #2563eb;
+        color: #fff;
+    }
+
+    .day.other-month {
+        color: #cbd5e1;
+    }
+
+    .day.other-month:hover {
+        background: #f8fafc;
+        color: #94a3b8;
+    }
+
+    /* Divider */
+    .divider {
+        height: 1px;
+        background: #e2e8f0;
+        margin: 2px 10px;
+    }
+
+    /* Quick navigation buttons */
+    .quick-buttons {
+        display: flex;
+        gap: 4px;
+        padding: 5px 10px;
+    }
+
+    .quick-btn {
+        flex: 1;
+        padding: 5px 2px;
+        border: 1px solid #e2e8f0;
+        border-radius: 6px;
+        background: #f8fafc;
+        cursor: pointer;
+        font-size: 10px;
+        font-weight: 600;
+        color: #475569;
+        transition: all 0.15s;
+        text-align: center;
+        letter-spacing: -0.01em;
+    }
+
+    .quick-btn:hover {
+        background: #eff6ff;
+        border-color: #93c5fd;
+        color: #2563eb;
+    }
+
+    .quick-btn:active {
+        background: #dbeafe;
+    }
+
+    /* Action buttons */
+    .actions {
+        display: flex;
+        gap: 6px;
+        padding: 5px 10px 8px;
+    }
+
+    .btn {
+        padding: 7px 0;
+        border-radius: 6px;
+        border: none;
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: 600;
+        transition: all 0.15s;
+        text-align: center;
+    }
+
+    .btn-cancel {
+        flex: 1;
+        background: #f1f5f9;
+        color: #64748b;
+        border: 1px solid #e2e8f0;
+    }
+
+    .btn-cancel:hover {
+        background: #e2e8f0;
+        color: #475569;
+    }
+
+    .btn-select {
+        flex: 1.5;
+        background: #3b82f6;
+        color: #fff;
+        border: 1px solid #2563eb;
+    }
+
+    .btn-select:hover {
+        background: #2563eb;
+    }
+
+    .btn-select:active {
+        background: #1d4ed8;
+    }
+</style>
+</head>
+<body>
+<div class="calendar">
+    <div class="header">
+        <button class="nav-btn" id="prevMonth" title="Previous month">&#8249;</button>
+        <div class="month-year-selectors">
+            <select id="monthSelect" title="Select month"></select>
+            <select id="yearSelect" title="Select year"></select>
+        </div>
+        <button class="nav-btn" id="nextMonth" title="Next month">&#8250;</button>
+    </div>
+
+    <div class="weekdays">
+        <div class="weekday">Su</div>
+        <div class="weekday">Mo</div>
+        <div class="weekday">Tu</div>
+        <div class="weekday">We</div>
+        <div class="weekday">Th</div>
+        <div class="weekday">Fr</div>
+        <div class="weekday">Sa</div>
+    </div>
+
+    <div class="days" id="daysGrid"></div>
+
+    <div class="divider"></div>
+
+    <div class="quick-buttons">
+        <button class="quick-btn" id="btnToday">Today</button>
+        <button class="quick-btn" id="btnWeek">+1 Wk</button>
+        <button class="quick-btn" id="btnMonth">+1 Mo</button>
+        <button class="quick-btn" id="btnYear">+1 Yr</button>
+    </div>
+
+    <div class="actions">
+        <button class="btn btn-cancel" id="btnCancel">Cancel</button>
+        <button class="btn btn-select" id="btnSelect">Select</button>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

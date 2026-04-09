@@ -1,0 +1,8 @@
+Init(): void
+  Initialize the WebView2 control and load the date picker UI
+
+ShowPicker(initialDate STRING): STRING
+  Show the date picker popup. Pass an initial date in MM/DD/YYYY format (or empty for today). Returns the selected date in MM/DD/YYYY format, or empty string if cancelled.
+
+About(): void
+  Display the About dialog with control version and information

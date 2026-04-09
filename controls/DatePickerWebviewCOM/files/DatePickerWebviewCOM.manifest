@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+  <assemblyIdentity
+      name="DatePickerWebviewCOM"
+      version="1.0.0.0"
+      processorArchitecture="x86"
+      type="win32"/>
+
+  <clrClass
+      clsid="{8E8A996C-86DE-41EC-AB6F-8EE229DC91B7}"
+      progid="DatePickerWebviewCOM.DatePickerWebviewCOMControl"
+      threadingModel="Apartment"
+      name="DatePickerWebviewCOM.DatePickerWebviewCOMControl"
+      runtimeVersion="v4.0.30319">
+  </clrClass>
+
+  <file name="DatePickerWebviewCOM.dll">
+     <typelib
+         tlbid="{A285B10A-F02C-44BE-A07A-1951F3906C39}"
+         version="1.0"
+         helpdir=""
+         resourceid="0"
+         flags="HASDISKIMAGE"/>
+  </file>
+</assembly>

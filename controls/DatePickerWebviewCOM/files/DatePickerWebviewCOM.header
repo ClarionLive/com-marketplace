@@ -1,0 +1,9 @@
+AssemblyName: DatePickerWebviewCOM
+Version: 1.0.0.0
+ProgID: DatePickerWebviewCOM.DatePickerWebviewCOMControl
+CLSID: {8E8A996C-86DE-41EC-AB6F-8EE229DC91B7}
+InterfaceGUID: {F102B738-26EF-47AA-94AA-23B0C7192EC8}
+EventsGUID: {9DDC759D-C173-49E8-8AAF-F439C1006009}
+TypeLibGUID: {A285B10A-F02C-44BE-A07A-1951F3906C39}
+ControlType: webview2
+ClarionPath: accessory\bin\DatePickerWebviewCOM.dll

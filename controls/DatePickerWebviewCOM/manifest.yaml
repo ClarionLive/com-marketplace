@@ -1,0 +1,30 @@
+name: "DatePickerWebviewCOM"
+version: "1.0.0.0"
+description: "Date Picker COM Control for Clarion - WebView2 calendar popup with modern UI, quick navigation buttons, and month/year selectors"
+short_description: "Date Picker COM Control for Clarion with WebView2 calendar popup"
+prog_id: "DatePickerWebviewCOM.DatePickerWebviewCOMControl"
+assembly_name: "DatePickerWebviewCOM"
+control_type: "webview2"
+ui_library: "WebView2"
+
+repository:
+  url: "https://github.com/peterparker57/DatePickerWebviewCOM"
+  branch: "master"
+
+author:
+  name: "PeterParker57"
+  github: "peterparker57"
+
+compatibility:
+  dotnet: "net472"
+  clarion:
+    min_version: "11.0"
+    tested_versions: ["11.0", "12.0"]
+
+category: "UI Controls"
+tags: ["calendar", "date-picker", "webview2"]
+
+changelog:
+  - version: "1.0.0.0"
+    date: "2026-04-09"
+    changes: "Initial marketplace submission"
