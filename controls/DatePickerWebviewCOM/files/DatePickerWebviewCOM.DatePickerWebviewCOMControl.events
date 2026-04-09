@@ -1,0 +1,5 @@
+ErrorOccurred(errorMessage STRING)
+  Fired when an error occurs during control initialization or operation
+
+DateSelected(selectedDate STRING)
+  Fired when the user selects a date from the calendar picker

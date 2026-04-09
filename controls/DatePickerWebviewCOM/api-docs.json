@@ -1,0 +1,60 @@
+{
+  "methods": [
+    {
+      "name": "Init",
+      "description": "Initialize the WebView2 control and load the date picker UI",
+      "parameters": [],
+      "returns": {
+        "type": "void",
+        "description": ""
+      }
+    },
+    {
+      "name": "ShowPicker",
+      "description": "Show the date picker popup. Pass an initial date in MM/DD/YYYY format (or empty for today). Returns the selected date in MM/DD/YYYY format, or empty string if cancelled.",
+      "parameters": [
+        {
+          "name": "initialDate",
+          "type": "STRING",
+          "description": "Initial date in MM/DD/YYYY format, or empty for today"
+        }
+      ],
+      "returns": {
+        "type": "STRING",
+        "description": "Selected date in MM/DD/YYYY format, or empty string if cancelled"
+      }
+    },
+    {
+      "name": "About",
+      "description": "Display the About dialog with control version and information",
+      "parameters": [],
+      "returns": {
+        "type": "void",
+        "description": ""
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "ErrorOccurred",
+      "description": "Fired when an error occurs during control initialization or operation",
+      "parameters": [
+        {
+          "name": "errorMessage",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "name": "DateSelected",
+      "description": "Fired when the user selects a date from the calendar picker",
+      "parameters": [
+        {
+          "name": "selectedDate",
+          "type": "STRING"
+        }
+      ]
+    }
+  ],
+  "properties": []
+}
