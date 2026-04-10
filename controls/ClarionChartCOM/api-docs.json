@@ -1,0 +1,101 @@
+{
+  "methods": [
+    {
+      "name": "Init",
+      "description": "Initialize the chart control. Call once after creating the COM object.",
+      "parameters": [],
+      "returns": { "type": "void", "description": "" }
+    },
+    {
+      "name": "SetChartType",
+      "description": "Set the chart type: 'bar', 'line', 'stackedbar', 'pie', 'doughnut', 'area'",
+      "parameters": [
+        { "name": "chartType", "type": "STRING", "description": "Chart type name" }
+      ],
+      "returns": { "type": "void", "description": "" }
+    },
+    {
+      "name": "SetTitle",
+      "description": "Set the chart title. Pass empty string for no title.",
+      "parameters": [
+        { "name": "title", "type": "STRING", "description": "Title text" }
+      ],
+      "returns": { "type": "void", "description": "" }
+    },
+    {
+      "name": "SetAxisLabels",
+      "description": "Set axis labels for X and Y axes.",
+      "parameters": [
+        { "name": "xLabel", "type": "STRING", "description": "X axis label" },
+        { "name": "yLabel", "type": "STRING", "description": "Y axis label" }
+      ],
+      "returns": { "type": "void", "description": "" }
+    },
+    {
+      "name": "SetCategories",
+      "description": "Set category labels from a base64-encoded JSON array of strings. Encode the JSON before passing: base64([\"Jan\",\"Feb\",\"Mar\",...])",
+      "parameters": [
+        { "name": "base64Json", "type": "STRING", "description": "Base64-encoded JSON array of category labels" }
+      ],
+      "returns": { "type": "void", "description": "" }
+    },
+    {
+      "name": "AddSeries",
+      "description": "Add a data series from a base64-encoded JSON object. Encode the JSON before passing: base64({\"name\":\"2024\",\"color\":\"#4CAF50\",\"data\":[0,2,...]}). Color is optional. Data count must match category count.",
+      "parameters": [
+        { "name": "base64Json", "type": "STRING", "description": "Base64-encoded JSON object describing the series" }
+      ],
+      "returns": { "type": "void", "description": "" }
+    },
+    {
+      "name": "ClearSeries",
+      "description": "Remove all series. Call before loading new data.",
+      "parameters": [],
+      "returns": { "type": "void", "description": "" }
+    },
+    {
+      "name": "Render",
+      "description": "Draw or redraw the chart with current settings.",
+      "parameters": [],
+      "returns": { "type": "void", "description": "" }
+    },
+    {
+      "name": "SetOption",
+      "description": "Set a chart option by key/value pair. Supported keys: legend = 'bottom', 'right', 'none'; gridlines = 'true', 'false'; theme = 'light', 'dark'; palette = 'default', 'pastel', 'earth', 'material'.",
+      "parameters": [
+        { "name": "key", "type": "STRING", "description": "Option key" },
+        { "name": "value", "type": "STRING", "description": "Option value" }
+      ],
+      "returns": { "type": "void", "description": "" }
+    },
+    {
+      "name": "ExportImage",
+      "description": "Export chart as a base64-encoded PNG image string. Returns empty string on failure.",
+      "parameters": [],
+      "returns": { "type": "STRING", "description": "Base64-encoded PNG image" }
+    },
+    {
+      "name": "About",
+      "description": "Display control name and version information.",
+      "parameters": [],
+      "returns": { "type": "void", "description": "" }
+    }
+  ],
+  "events": [
+    {
+      "name": "ChartRendered",
+      "description": "Fired after the chart has been rendered.",
+      "parameters": []
+    },
+    {
+      "name": "SeriesClicked",
+      "description": "Fired when the user clicks on a data point in the chart.",
+      "parameters": [
+        { "name": "seriesName", "type": "STRING", "description": "Name of the series clicked" },
+        { "name": "category", "type": "STRING", "description": "Category label of the clicked point" },
+        { "name": "value", "type": "REAL", "description": "Data value of the clicked point" }
+      ]
+    }
+  ],
+  "properties": []
+}

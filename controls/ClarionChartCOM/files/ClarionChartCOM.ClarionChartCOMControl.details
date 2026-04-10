@@ -1,0 +1,10 @@
+﻿[FriendlyName]
+ClarionChartCOMControl
+[ProgID]
+ClarionChartCOM.ClarionChartCOMControl
+[FilenameNoExtenstion]
+ClarionChartCOM
+[Description]
+COM control that renders modern charts using DevExpress XtraCharts.
+[ObjectName]
+ClarionChartCOM_ClarionChartCOMControl
