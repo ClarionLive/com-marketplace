@@ -1,0 +1,30 @@
+name: "ClarionChartCOM"
+version: "1.0.3.0"
+description: "DevExpress XtraCharts COM Control for Clarion. Renders modern, attractive charts (bar, line, stackedbar, pie, doughnut, area) inside a Clarion window using JSON data input. Includes color-blind-friendly default palette, crosshair tooltips, configurable legend/gridlines/themes, base64 PNG export, and click events."
+short_description: "DevExpress XtraCharts COM Control for Clarion - renders modern charts using JSON data input."
+prog_id: "ClarionChartCOM.ClarionChartCOMControl"
+assembly_name: "ClarionChartCOM"
+control_type: "standard"
+ui_library: "DevExpress"
+
+repository:
+  url: "https://github.com/peterparker57/ClarionChartCOM"
+  branch: "master"
+
+author:
+  name: "peterparker57"
+  github: "peterparker57"
+
+compatibility:
+  dotnet: "net472"
+  clarion:
+    min_version: "11.0"
+    tested_versions: ["11.0", "12.0"]
+
+category: "UI Controls"
+tags: ["chart", "graph", "devexpress", "visualization"]
+
+changelog:
+  - version: "1.0.3.0"
+    date: "2026-04-10"
+    changes: "Initial marketplace submission"

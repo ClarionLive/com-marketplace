@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+  <assemblyIdentity
+      name="ClarionChartCOM"
+      version="1.0.3.0"
+      processorArchitecture="x86"
+      type="win32"/>
+
+  <clrClass
+      clsid="{7781735D-7A9E-4B4F-A1E9-AAD2A0942F69}"
+      progid="ClarionChartCOM.ClarionChartCOMControl"
+      threadingModel="Apartment"
+      name="ClarionChartCOM.ClarionChartCOMControl"
+      runtimeVersion="v4.0.30319">
+  </clrClass>
+
+  <file name="ClarionChartCOM.dll">
+     <typelib
+         tlbid="{A1CD976E-E925-45AE-A9C8-0C20E1A46AF1}"
+         version="1.0"
+         helpdir=""
+         resourceid="0"
+         flags="HASDISKIMAGE"/>
+  </file>
+</assembly>

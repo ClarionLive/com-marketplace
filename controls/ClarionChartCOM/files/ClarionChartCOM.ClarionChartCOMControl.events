@@ -1,0 +1,26 @@
+﻿[Event]
+ChartRendered
+[EventDescription]
+Fired after the chart has been rendered.
+[Event]
+SeriesClicked
+[EventDescription]
+Fired when the user clicks on a data point in the chart.
+[Parameter1]
+seriesName
+[Parameter1Type]
+STRING
+[Parameter1Description]
+Name of the series clicked
+[Parameter2]
+category
+[Parameter2Type]
+STRING
+[Parameter2Description]
+Category label of the clicked point
+[Parameter3]
+value
+[Parameter3Type]
+REAL
+[Parameter3Description]
+Data value of the clicked point

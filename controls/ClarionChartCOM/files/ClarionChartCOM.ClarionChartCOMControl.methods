@@ -1,0 +1,103 @@
+﻿[Method]
+Init
+[MethodDescription]
+Initialize the chart control. Call once after creating the COM object.
+
+[Method]
+SetChartType
+[MethodDescription]
+Set the chart type: 'bar', 'line', 'stackedbar', 'pie', 'doughnut', 'area'
+[Parameter]
+chartType
+[ParameterType]
+STRING
+[ParameterDescription]
+The chartType parameter.
+
+[Method]
+SetTitle
+[MethodDescription]
+Set the chart title. Pass empty string for no title.
+[Parameter]
+title
+[ParameterType]
+STRING
+[ParameterDescription]
+The title parameter.
+
+[Method]
+SetAxisLabels
+[MethodDescription]
+Set axis labels for X and Y axes.
+[Parameter]
+xLabel
+[ParameterType]
+STRING
+[ParameterDescription]
+The xLabel parameter.
+[Parameter]
+yLabel
+[ParameterType]
+STRING
+[ParameterDescription]
+The yLabel parameter.
+
+[Method]
+SetCategories
+[MethodDescription]
+Set category labels from a base64-encoded JSON array of strings. Encode the JSON before passing: base64(["Jan","Feb","Mar",...])
+[Parameter]
+base64Json
+[ParameterType]
+STRING
+[ParameterDescription]
+The base64Json parameter.
+
+[Method]
+AddSeries
+[MethodDescription]
+Add a data series from a base64-encoded JSON object. Encode the JSON before passing: base64({"name":"2024","color":"#4CAF50","data":[0,2,...]}) Color is optional. Data count must match category count.
+[Parameter]
+base64Json
+[ParameterType]
+STRING
+[ParameterDescription]
+The base64Json parameter.
+
+[Method]
+ClearSeries
+[MethodDescription]
+Remove all series. Call before loading new data.
+
+[Method]
+Render
+[MethodDescription]
+Draw or redraw the chart with current settings.
+
+[Method]
+SetOption
+[MethodDescription]
+Set a chart option by key/value pair. Supported keys: legend   = "bottom", "right", "none" gridlines = "true", "false" theme    = "light", "dark" palette  = "default", "pastel", "earth", "material"
+[Parameter]
+key
+[ParameterType]
+STRING
+[ParameterDescription]
+The key parameter.
+[Parameter]
+value
+[ParameterType]
+STRING
+[ParameterDescription]
+The value parameter.
+
+[Method]
+ExportImage
+[MethodDescription]
+Export chart as a base64-encoded PNG image string. Returns empty string on failure.
+
+[Method]
+About
+[MethodDescription]
+Display control name and version information.
+

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClarionChartCOM - API Documentation</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #f7fafc;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+        }
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+        .content {
+            padding: 40px;
+        }
+        .info-box {
+            background: #ebf8ff;
+            border-left: 4px solid #4299e1;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .info-box strong {
+            color: #2c5282;
+        }
+        h2 {
+            color: #2d3748;
+            font-size: 1.8em;
+            margin: 40px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+        h3 {
+            color: #4a5568;
+            font-size: 1.3em;
+            margin: 25px 0 15px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 14px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        td {
+            padding: 12px 14px;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+        tr:hover {
+            background-color: #f7fafc;
+        }
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+        code {
+            background: #edf2f7;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            color: #2d3748;
+            border: 1px solid #e2e8f0;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+        .badge-property {
+            background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+            color: white;
+        }
+        .badge-method {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+            color: white;
+        }
+        .badge-event {
+            background: linear-gradient(135deg, #f56565 0%, #e53e3e 100%);
+            color: white;
+        }
+        .section-card {
+            background: #f7fafc;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #e2e8f0;
+        }
+        .tech-badge {
+            display: inline-block;
+            background: #2d3748;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.85em;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        li {
+            margin: 8px 0;
+            color: #4a5568;
+        }
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #e2e8f0;
+            text-align: center;
+            color: #718096;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ClarionChart</h1>
+            <p class="subtitle">COM Control for Clarion Applications</p>
+        </div>
+        <div class="content">
+            <div class="info-box">
+                <strong>ProgID:</strong> <code>ClarionChartCOM.ClarionChart</code><br>
+                <strong>Assembly:</strong> <code>ClarionChartCOM.dll</code><br>
+                <strong>Type:</strong> Registration-Free COM (RegFree)
+            </div>
+
+            <div class="section-card">
+                <h3>Deployment Files</h3>
+                <p>This control package includes all necessary files for deployment:</p>
+                <ul>
+                    <li><code>ClarionChartCOM.dll</code> - The COM control library</li>
+                    <li><code>ClarionChartCOM.manifest</code> - RegFree COM registration</li>
+                    <li><code>ClarionChartCOM.details</code> - Control metadata</li>
+                    <li><code>ClarionChartCOM.events</code> - Event definitions</li>
+                    <li><code>ClarionChartCOM.methods</code> - Properties and methods reference</li>
+                </ul>
+            </div>
+
+            <h2>Properties</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Property</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+<tr><td colspan='3' style='text-align:center; color:#718096;'>No properties defined</td></tr>
+                </tbody>
+            </table>
+
+            <h2>Methods</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Method</th>
+                        <th>Description</th>
+                        <th>Returns</th>
+                    </tr>
+                </thead>
+                <tbody>
+            <tr>
+                <td><span class="badge badge-method">Init()</span></td>
+                <td>Initialize the chart control. Call once after creating the COM object.</td>
+                <td><code>void</code></td>
+            </tr>            <tr>
+                <td><span class="badge badge-method">SetChartType(chartType STRING)</span></td>
+                <td>Set the chart type: 'bar', 'line', 'stackedbar', 'pie', 'doughnut', 'area'</td>
+                <td><code>void</code></td>
+            </tr>            <tr>
+                <td><span class="badge badge-method">SetTitle(title STRING)</span></td>
+                <td>Set the chart title. Pass empty string for no title.</td>
+                <td><code>void</code></td>
+            </tr>            <tr>
+                <td><span class="badge badge-method">SetAxisLabels(xLabel STRING, yLabel STRING)</span></td>
+                <td>Set axis labels for X and Y axes.</td>
+                <td><code>void</code></td>
+            </tr>            <tr>
+                <td><span class="badge badge-method">SetCategories(base64Json STRING)</span></td>
+                <td>Set category labels from a base64-encoded JSON array of strings. Encode the JSON before passing: base64(["Jan","Feb","Mar",...])</td>
+                <td><code>void</code></td>
+            </tr>            <tr>
+                <td><span class="badge badge-method">AddSeries(base64Json STRING)</span></td>
+                <td>Add a data series from a base64-encoded JSON object. Encode the JSON before passing: base64({"name":"2024","color":"#4CAF50","data":[0,2,...]}) Color is optional. Data count must match category count.</td>
+                <td><code>void</code></td>
+            </tr>            <tr>
+                <td><span class="badge badge-method">ClearSeries()</span></td>
+                <td>Remove all series. Call before loading new data.</td>
+                <td><code>void</code></td>
+            </tr>            <tr>
+                <td><span class="badge badge-method">Render()</span></td>
+                <td>Draw or redraw the chart with current settings.</td>
+                <td><code>void</code></td>
+            </tr>            <tr>
+                <td><span class="badge badge-method">SetOption(key STRING, value STRING)</span></td>
+                <td>Set a chart option by key/value pair. Supported keys: legend   = "bottom", "right", "none" gridlines = "true", "false" theme    = "light", "dark" palette  = "default", "pastel", "earth", "material"</td>
+                <td><code>void</code></td>
+            </tr>            <tr>
+                <td><span class="badge badge-method">ExportImage()</span></td>
+                <td>Export chart as a base64-encoded PNG image string. Returns empty string on failure.</td>
+                <td><code>STRING</code></td>
+            </tr>            <tr>
+                <td><span class="badge badge-method">About()</span></td>
+                <td>Display control name and version information.</td>
+                <td><code>void</code></td>
+            </tr>
+                </tbody>
+            </table>
+
+            <h2>Events</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Event</th>
+                        <th>Parameters</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+            <tr>
+                <td><span class="badge badge-event">ChartRendered</span></td>
+                <td><code>none</code></td>
+                <td>Fired after the chart has been rendered.</td>
+            </tr>            <tr>
+                <td><span class="badge badge-event">SeriesClicked</span></td>
+                <td><code>seriesName STRING, category STRING, value REAL</code></td>
+                <td>Fired when the user clicks on a data point in the chart.</td>
+            </tr>
+                </tbody>
+            </table>
+
+            <h2>Technical Specifications</h2>
+            <div class="section-card">
+                <p><strong>Technology Stack:</strong></p>
+                <div>
+                    <span class="tech-badge">.NET Framework 4.7.2</span>
+                    <span class="tech-badge">Win32 (x86)</span>
+                    <span class="tech-badge">RegFree COM</span>
+                    <span class="tech-badge">Apartment Threading</span>
+                </div>
+                <br><br>
+                <p><strong>COM Configuration:</strong></p>
+                <ul>
+                    <li><strong>ProgID:</strong> <code>ClarionChartCOM.ClarionChart</code></li>
+                    <li><strong>Registration:</strong> Registration-Free (no registry modifications)</li>
+                    <li><strong>Threading Model:</strong> Apartment (STA)</li>
+                    <li><strong>Platform:</strong> x86 (32-bit) for Clarion compatibility</li>
+                </ul>
+            </div>
+
+            <h2>Additional Resources</h2>
+            <div class="section-card">
+                <p>The following files are provided with this control:</p>
+                <ul>
+                    <li><code>ClarionChartCOM.methods</code> - Properties and methods reference with Clarion data types</li>
+                    <li><code>ClarionChartCOM.events</code> - Event definitions with parameters</li>
+                    <li><code>ClarionChartCOM.details</code> - Control metadata and ProgID information</li>
+                </ul>
+                <p>These files are automatically generated during the build process and provide accurate Clarion-specific implementation details.</p>
+            </div>
+
+            <div class="footer">
+                <p>Generated for Clarion Development</p>
+                <p>Registration-Free COM â€¢ No Registry Pollution â€¢ Clean Deployment</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
