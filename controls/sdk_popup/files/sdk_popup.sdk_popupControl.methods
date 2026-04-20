@@ -1,0 +1,272 @@
+﻿[Method]
+ShowNotification
+[MethodDescription]
+Shows a toast notification with the specified message
+[Parameter]
+message
+[ParameterType]
+STRING
+[ParameterDescription]
+The message parameter.
+
+[Method]
+ShowNotificationWithTitle
+[MethodDescription]
+Shows a toast notification with title and message
+[Parameter]
+title
+[ParameterType]
+STRING
+[ParameterDescription]
+The title parameter.
+[Parameter]
+message
+[ParameterType]
+STRING
+[ParameterDescription]
+The message parameter.
+
+[Method]
+SetTitle
+[MethodDescription]
+Sets the notification title text
+[Parameter]
+title
+[ParameterType]
+STRING
+[ParameterDescription]
+The title parameter.
+
+[Method]
+GetTitle
+[MethodDescription]
+Gets the current notification title text
+
+[Method]
+SetMessage
+[MethodDescription]
+Sets the notification message text
+[Parameter]
+message
+[ParameterType]
+STRING
+[ParameterDescription]
+The message parameter.
+
+[Method]
+GetMessage
+[MethodDescription]
+Gets the current notification message text
+
+[Method]
+SetDuration
+[MethodDescription]
+Sets the display duration in milliseconds (default: 3000)
+[Parameter]
+milliseconds
+[ParameterType]
+LONG
+[ParameterDescription]
+The milliseconds parameter.
+
+[Method]
+GetDuration
+[MethodDescription]
+Gets the current display duration in milliseconds
+
+[Method]
+SetPosition
+[MethodDescription]
+Sets the notification position: TopLeft, TopCenter, TopRight, BottomLeft, BottomCenter, BottomRight, Center
+[Parameter]
+position
+[ParameterType]
+STRING
+[ParameterDescription]
+The position parameter.
+
+[Method]
+GetPosition
+[MethodDescription]
+Gets the current notification position
+
+[Method]
+SetNotificationType
+[MethodDescription]
+Sets the notification type: Info, Success, Warning, Error
+[Parameter]
+notificationType
+[ParameterType]
+STRING
+[ParameterDescription]
+The notificationType parameter.
+
+[Method]
+GetNotificationType
+[MethodDescription]
+Gets the current notification type
+
+[Method]
+SetBackgroundColor
+[MethodDescription]
+Sets the background color for the notification (hex format, e.g. #FF6600)
+[Parameter]
+hexColor
+[ParameterType]
+STRING
+[ParameterDescription]
+The hexColor parameter.
+
+[Method]
+GetBackgroundColor
+[MethodDescription]
+Gets the current background color
+
+[Method]
+SetTextColor
+[MethodDescription]
+Sets the text color for the notification (hex format)
+[Parameter]
+hexColor
+[ParameterType]
+STRING
+[ParameterDescription]
+The hexColor parameter.
+
+[Method]
+GetTextColor
+[MethodDescription]
+Gets the current text color
+
+[Method]
+SetImagePath
+[MethodDescription]
+Sets the image from a file path (PNG, JPG, BMP, ICO)
+[Parameter]
+filePath
+[ParameterType]
+STRING
+[ParameterDescription]
+The filePath parameter.
+
+[Method]
+GetImagePath
+[MethodDescription]
+Gets the current image file path
+
+[Method]
+ClearImage
+[MethodDescription]
+Clears the custom image, reverting to the notification type icon
+
+[Method]
+DismissNotification
+[MethodDescription]
+Dismisses any currently visible notification
+
+[Method]
+GetIsVisible
+[MethodDescription]
+Returns whether a notification is currently visible
+
+[Method]
+About
+[MethodDescription]
+Displays control name and version information in a MessageBox
+
+[Method]
+SetSoundEnabled
+[MethodDescription]
+Enables or disables playing a sound when a notification is shown
+[Parameter]
+enabled
+[ParameterType]
+BYTE
+[ParameterDescription]
+The enabled parameter.
+
+[Method]
+GetSoundEnabled
+[MethodDescription]
+Gets whether sound is enabled
+
+[Method]
+SetSoundPath
+[MethodDescription]
+Sets a custom WAV file path for the notification sound. Empty string uses the default system sound.
+[Parameter]
+wavFilePath
+[ParameterType]
+STRING
+[ParameterDescription]
+The wavFilePath parameter.
+
+[Method]
+GetSoundPath
+[MethodDescription]
+Gets the current custom WAV file path
+
+[Method]
+SetOpacity
+[MethodDescription]
+Sets the notification opacity (0-100, where 100 is fully opaque). Default: 100
+[Parameter]
+percent
+[ParameterType]
+LONG
+[ParameterDescription]
+The percent parameter.
+
+[Method]
+GetOpacity
+[MethodDescription]
+Gets the current notification opacity (0-100)
+
+[Method]
+SetPinned
+[MethodDescription]
+Sets whether the notification stays visible until manually dismissed (true = sticky)
+[Parameter]
+pinned
+[ParameterType]
+BYTE
+[ParameterDescription]
+The pinned parameter.
+
+[Method]
+GetPinned
+[MethodDescription]
+Gets whether notifications are pinned (sticky)
+
+[Method]
+SetImageSize
+[MethodDescription]
+Sets the display size for the notification image in pixels. 0,0 = original size.
+[Parameter]
+width
+[ParameterType]
+LONG
+[ParameterDescription]
+The width parameter.
+[Parameter]
+height
+[ParameterType]
+LONG
+[ParameterDescription]
+The height parameter.
+
+[Method]
+GetImageWidth
+[MethodDescription]
+Gets the configured image display width (0 = original)
+
+[Method]
+GetImageHeight
+[MethodDescription]
+Gets the configured image display height (0 = original)
+
+[Method]
+ShowImageNotification
+[MethodDescription]
+Shows a notification with only an image (no title or message text). Call SetImagePath first to set the image.
+
